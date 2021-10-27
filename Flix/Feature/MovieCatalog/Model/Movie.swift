@@ -14,24 +14,27 @@ import Foundation
 // Generated this file from the JSON Scheema of the TMD: https://developers.themoviedb.org/3/movies/get-movie-details
 
 struct Movie: Codable {
-    var adult: Bool
-    var backdropPath: String
-    var budget: Int
-    var genres: [Genre]
-    var homepage: String
-    var id: Int
-    var imdbID, originalLanguage, originalTitle, overview: String
-    var popularity: Double
+    // Make everything nullable to avoid possible null values
+    // crashing our app so that Codable don't try and decode a null
+    // to a non value
+    var adult: Bool?
+    var backdropPath: String?
+    var budget: Int?
+    var genres: [Genre]?
+    var homepage: String?
+    var id: Int?
+    var imdbID, originalLanguage, originalTitle, overview: String?
+    var popularity: Double?
     var posterPath: String?
-    var productionCompanies: [ProductionCompany]
-    var productionCountries: [ProductionCountry]
-    var releaseDate: String
-    var revenue, runtime: Int
-    var spokenLanguages: [SpokenLanguage]
-    var status, tagline, title: String
-    var video: Bool
-    var voteAverage: Double
-    var voteCount: Int
+    var productionCompanies: [ProductionCompany]?
+    var productionCountries: [ProductionCountry]?
+    var releaseDate: String?
+    var revenue, runtime: Int?
+    var spokenLanguages: [SpokenLanguage]?
+    var status, tagline, title: String?
+    var video: Bool?
+    var voteAverage: Double?
+    var voteCount: Int?
     
     enum CodingKeys: String, CodingKey {
         case adult
@@ -55,15 +58,15 @@ struct Movie: Codable {
 
 // MARK: - Genre
 struct Genre: Codable {
-    var id: Int
-    var name: String
+    var id: Int?
+    var name: String?
 }
 
 // MARK: - ProductionCompany
 struct ProductionCompany: Codable {
-    var id: Int
+    var id: Int?
     var logoPath: String?
-    var name, originCountry: String
+    var name, originCountry: String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -75,7 +78,7 @@ struct ProductionCompany: Codable {
 
 // MARK: - ProductionCountry
 struct ProductionCountry: Codable {
-    var iso3166_1, name: String
+    var iso3166_1, name: String?
     
     enum CodingKeys: String, CodingKey {
         case iso3166_1 = "iso_3166_1"
@@ -85,7 +88,7 @@ struct ProductionCountry: Codable {
 
 // MARK: - SpokenLanguage
 struct SpokenLanguage: Codable {
-    var iso639_1, name: String
+    var iso639_1, name: String?
     
     enum CodingKeys: String, CodingKey {
         case iso639_1 = "iso_639_1"
