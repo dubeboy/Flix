@@ -10,3 +10,9 @@ import Foundation
 protocol MovieCatalogRepository {
     func getMovies(result: @escaping NetworkResponseCompletion<Movie>)
 }
+
+class MovieCatalogRepositoryImpl: MovieCatalogRepository {
+    func getMovies(result: @escaping NetworkResponseCompletion<Movie>) {
+        
+    }
+}

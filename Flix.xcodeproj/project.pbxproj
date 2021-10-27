@@ -16,9 +16,13 @@
 		7177CB6C27296E2000ADF765 /* FlixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB6B27296E2000ADF765 /* FlixTests.swift */; };
 		7177CB7627296E2000ADF765 /* FlixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB7527296E2000ADF765 /* FlixUITests.swift */; };
 		7177CB7827296E2000ADF765 /* FlixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB7727296E2000ADF765 /* FlixUITestsLaunchTests.swift */; };
-		7177CB8627297ED900ADF765 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7177CB8527297ED900ADF765 /* Alamofire */; };
 		7177CB8A2729869D00ADF765 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB892729869D00ADF765 /* MainCoordinator.swift */; };
 		7177CB912729EC8400ADF765 /* MovieCatalogRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB902729EC8400ADF765 /* MovieCatalogRepository.swift */; };
+		7177CB952729EFD500ADF765 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB942729EFD500ADF765 /* Movie.swift */; };
+		7177CB982729F10500ADF765 /* NetworkResponseCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB972729F10500ADF765 /* NetworkResponseCompletion.swift */; };
+		7177CB9C2729F5B400ADF765 /* Merchant in Frameworks */ = {isa = PBXBuildFile; productRef = 7177CB9B2729F5B400ADF765 /* Merchant */; };
+		7177CBA32729F8A300ADF765 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CBA22729F8A300ADF765 /* Logger.swift */; };
+		7177CBA6272A01F400ADF765 /* FlixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CBA5272A01F400ADF765 /* FlixService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,10 @@
 		7177CB7727296E2000ADF765 /* FlixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlixUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7177CB892729869D00ADF765 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		7177CB902729EC8400ADF765 /* MovieCatalogRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCatalogRepository.swift; sourceTree = "<group>"; };
+		7177CB942729EFD500ADF765 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		7177CB972729F10500ADF765 /* NetworkResponseCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponseCompletion.swift; sourceTree = "<group>"; };
+		7177CBA22729F8A300ADF765 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		7177CBA5272A01F400ADF765 /* FlixService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlixService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7177CB8627297ED900ADF765 /* Alamofire in Frameworks */,
+				7177CB9C2729F5B400ADF765 /* Merchant in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +113,9 @@
 		7177CB5327296E1F00ADF765 /* Flix */ = {
 			isa = PBXGroup;
 			children = (
+				7177CBA4272A01D200ADF765 /* Service */,
+				7177CB9E2729F7F700ADF765 /* Infrastructure */,
+				7177CB9D2729F67000ADF765 /* Shared */,
 				7177CB882729867B00ADF765 /* Coordinator */,
 				7177CB87272982FE00ADF765 /* Feature */,
 				7177CB5427296E1F00ADF765 /* AppDelegate.swift */,
@@ -153,6 +164,7 @@
 		7177CB8B2729E3FF00ADF765 /* MovieCatalog */ = {
 			isa = PBXGroup;
 			children = (
+				7177CB932729EFC200ADF765 /* Model */,
 				7177CB8F2729EB1000ADF765 /* Repository */,
 				7177CB8C2729E42E00ADF765 /* View */,
 			);
@@ -183,6 +195,78 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		7177CB932729EFC200ADF765 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7177CB942729EFD500ADF765 /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7177CB962729F0DF00ADF765 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				7177CB972729F10500ADF765 /* NetworkResponseCompletion.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		7177CB992729F2C300ADF765 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7177CB9D2729F67000ADF765 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7177CB962729F0DF00ADF765 /* Repository */,
+				7177CB992729F2C300ADF765 /* Model */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		7177CB9E2729F7F700ADF765 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				7177CB9F2729F80B00ADF765 /* Elements */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		7177CB9F2729F80B00ADF765 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				7177CBA12729F85100ADF765 /* Extensions */,
+				7177CBA02729F84400ADF765 /* Logger */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		7177CBA02729F84400ADF765 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				7177CBA22729F8A300ADF765 /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		7177CBA12729F85100ADF765 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7177CBA4272A01D200ADF765 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7177CBA5272A01F400ADF765 /* FlixService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -200,7 +284,7 @@
 			);
 			name = Flix;
 			packageProductDependencies = (
-				7177CB8527297ED900ADF765 /* Alamofire */,
+				7177CB9B2729F5B400ADF765 /* Merchant */,
 			);
 			productName = Flix;
 			productReference = 7177CB5127296E1F00ADF765 /* Flix.app */;
@@ -275,7 +359,7 @@
 			);
 			mainGroup = 7177CB4827296E1E00ADF765;
 			packageReferences = (
-				7177CB8427297ED900ADF765 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7177CB9A2729F5B400ADF765 /* XCRemoteSwiftPackageReference "Merchant" */,
 			);
 			productRefGroup = 7177CB5227296E1F00ADF765 /* Products */;
 			projectDirPath = "";
@@ -322,9 +406,13 @@
 			files = (
 				7177CB5927296E1F00ADF765 /* MovieCatalogViewController.swift in Sources */,
 				7177CB8A2729869D00ADF765 /* MainCoordinator.swift in Sources */,
+				7177CB952729EFD500ADF765 /* Movie.swift in Sources */,
 				7177CB5527296E1F00ADF765 /* AppDelegate.swift in Sources */,
 				7177CB5727296E1F00ADF765 /* SceneDelegate.swift in Sources */,
 				7177CB912729EC8400ADF765 /* MovieCatalogRepository.swift in Sources */,
+				7177CB982729F10500ADF765 /* NetworkResponseCompletion.swift in Sources */,
+				7177CBA32729F8A300ADF765 /* Logger.swift in Sources */,
+				7177CBA6272A01F400ADF765 /* FlixService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,21 +772,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7177CB8427297ED900ADF765 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		7177CB9A2729F5B400ADF765 /* XCRemoteSwiftPackageReference "Merchant" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			repositoryURL = "https://github.com/dubeboy/Merchant";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				branch = develop;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7177CB8527297ED900ADF765 /* Alamofire */ = {
+		7177CB9B2729F5B400ADF765 /* Merchant */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7177CB8427297ED900ADF765 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
+			package = 7177CB9A2729F5B400ADF765 /* XCRemoteSwiftPackageReference "Merchant" */;
+			productName = Merchant;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
