@@ -8,7 +8,7 @@
 import Foundation
 import Merchant
 
-struct FlixService: Service {
+struct FlixNetworkService: Service {
     var baseURL: String = ""
     
     
