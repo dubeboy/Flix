@@ -14,9 +14,12 @@ import Foundation
 // Generated this file from the JSON Scheema of the TMD: https://developers.themoviedb.org/3/movies/get-movie-details
 
 struct Movie: Codable {
-    // Make everything nullable to avoid possible null values
-    // crashing our app so that Codable don't try and decode a null
-    // to a non value
+    // Make everything nullable to avoid possible returned null values
+    // crashing our app and that Codable doesn't try and decode a null
+    // to a non nullable Type
+    //
+    // Most of these will never be null as specified in the schema but
+    // but its okay to not trust the backend 😅
     var adult: Bool?
     var backdropPath: String?
     var budget: Int?
