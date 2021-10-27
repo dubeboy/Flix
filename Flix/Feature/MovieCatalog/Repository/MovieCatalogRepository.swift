@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol MovieCatalogRepository {
+    func getMovies(result: @escaping NetworkResponseCompletion<Movie>)
+}

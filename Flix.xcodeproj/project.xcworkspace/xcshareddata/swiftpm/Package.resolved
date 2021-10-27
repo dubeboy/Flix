@@ -9,6 +9,24 @@
           "revision": "d120af1e8638c7da36c8481fd61a66c0c08dc4fc",
           "version": "5.4.4"
         }
+      },
+      {
+        "package": "Merchant",
+        "repositoryURL": "https://github.com/dubeboy/Merchant",
+        "state": {
+          "branch": "develop",
+          "revision": "82fe1d8e1221eb3221f327cfea8df4a4bc9e37e4",
+          "version": null
+        }
+      },
+      {
+        "package": "Mocker",
+        "repositoryURL": "https://github.com/WeTransfer/Mocker.git",
+        "state": {
+          "branch": null,
+          "revision": "352066f1a29108548386487ae083b4115e94c1fb",
+          "version": "2.5.4"
+        }
       }
     ]
   },
