@@ -4,9 +4,10 @@
 
   Created by Divine.Dube on 2021/10/28.
  
- We'll store our
+ We'll store all out text that is being used by the app
   
 */
 
-"AppName"="Flix"
-"MoviesCatalogHome"="Movies"
+"appName"="Flix"
+"moviesCatalogHome"="Movies"
+"errors"=
