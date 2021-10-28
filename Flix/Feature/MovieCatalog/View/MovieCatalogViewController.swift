@@ -15,8 +15,8 @@ class MovieCatalogViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
-        title = "Hello"
+        view.backgroundColor = App
+        title = viewModel.title
         Logger.i("started MovieCatalogViewController")
 
     }

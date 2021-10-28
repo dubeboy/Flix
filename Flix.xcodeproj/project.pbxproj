@@ -14,6 +14,13 @@
 		71008EDF272B0ECC000F6B92 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008EDE272B0ECC000F6B92 /* Theme.swift */; };
 		71008EE5272B1D57000F6B92 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71008EE3272B1D56000F6B92 /* Localizable.strings */; };
 		71008EEC272B212D000F6B92 /* NSLocalizedString+Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008EEB272B212D000F6B92 /* NSLocalizedString+Elements.swift */; };
+		71008EEE272B286B000F6B92 /* NSLayoutConstraints+Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008EED272B286B000F6B92 /* NSLayoutConstraints+Elements.swift */; };
+		71008EF0272B2B6E000F6B92 /* UICollectionView+Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008EEF272B2B6E000F6B92 /* UICollectionView+Elements.swift */; };
+		71008EF2272B2BF6000F6B92 /* UINavigationController+Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008EF1272B2BF6000F6B92 /* UINavigationController+Elements.swift */; };
+		71008EF4272B2C0A000F6B92 /* UICollectionFlowLayout+Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008EF3272B2C0A000F6B92 /* UICollectionFlowLayout+Elements.swift */; };
+		71008EF6272B2C1D000F6B92 /* UIViewController+Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008EF5272B2C1D000F6B92 /* UIViewController+Elements.swift */; };
+		71008EF8272B2CEE000F6B92 /* NSObject+Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008EF7272B2CEE000F6B92 /* NSObject+Elements.swift */; };
+		71008EFB272B2FB6000F6B92 /* MovieCatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008EFA272B2FB6000F6B92 /* MovieCatalogCell.swift */; };
 		7177CB5527296E1F00ADF765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5427296E1F00ADF765 /* AppDelegate.swift */; };
 		7177CB5727296E1F00ADF765 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5627296E1F00ADF765 /* SceneDelegate.swift */; };
 		7177CB5927296E1F00ADF765 /* MovieCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5827296E1F00ADF765 /* MovieCatalogViewController.swift */; };
@@ -58,6 +65,13 @@
 		71008EE4272B1D56000F6B92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Flix/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		71008EE6272B1DC6000F6B92 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Flix/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		71008EEB272B212D000F6B92 /* NSLocalizedString+Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLocalizedString+Elements.swift"; sourceTree = "<group>"; };
+		71008EED272B286B000F6B92 /* NSLayoutConstraints+Elements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraints+Elements.swift"; sourceTree = "<group>"; };
+		71008EEF272B2B6E000F6B92 /* UICollectionView+Elements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Elements.swift"; sourceTree = "<group>"; };
+		71008EF1272B2BF6000F6B92 /* UINavigationController+Elements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Elements.swift"; sourceTree = "<group>"; };
+		71008EF3272B2C0A000F6B92 /* UICollectionFlowLayout+Elements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionFlowLayout+Elements.swift"; sourceTree = "<group>"; };
+		71008EF5272B2C1D000F6B92 /* UIViewController+Elements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Elements.swift"; sourceTree = "<group>"; };
+		71008EF7272B2CEE000F6B92 /* NSObject+Elements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Elements.swift"; sourceTree = "<group>"; };
+		71008EFA272B2FB6000F6B92 /* MovieCatalogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCatalogCell.swift; sourceTree = "<group>"; };
 		7177CB5127296E1F00ADF765 /* Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7177CB5427296E1F00ADF765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7177CB5627296E1F00ADF765 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +147,14 @@
 				71008EDE272B0ECC000F6B92 /* Theme.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		71008EF9272B2EE9000F6B92 /* MovieCatalogCell */ = {
+			isa = PBXGroup;
+			children = (
+				71008EFA272B2FB6000F6B92 /* MovieCatalogCell.swift */,
+			);
+			path = MovieCatalogCell;
 			sourceTree = "<group>";
 		};
 		7177CB4827296E1E00ADF765 = {
@@ -221,6 +243,7 @@
 		7177CB8C2729E42E00ADF765 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				71008EF9272B2EE9000F6B92 /* MovieCatalogCell */,
 				71008ED3272AB7D0000F6B92 /* MovieCatalogViewModel.swift */,
 				7177CB5827296E1F00ADF765 /* MovieCatalogViewController.swift */,
 				7177CB8D2729E43800ADF765 /* Widget */,
@@ -306,6 +329,12 @@
 		7177CBA12729F85100ADF765 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				71008EF7272B2CEE000F6B92 /* NSObject+Elements.swift */,
+				71008EF5272B2C1D000F6B92 /* UIViewController+Elements.swift */,
+				71008EF3272B2C0A000F6B92 /* UICollectionFlowLayout+Elements.swift */,
+				71008EF1272B2BF6000F6B92 /* UINavigationController+Elements.swift */,
+				71008EEF272B2B6E000F6B92 /* UICollectionView+Elements.swift */,
+				71008EED272B286B000F6B92 /* NSLayoutConstraints+Elements.swift */,
 				71008EEB272B212D000F6B92 /* NSLocalizedString+Elements.swift */,
 			);
 			path = Extensions;
@@ -457,21 +486,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71008EF4272B2C0A000F6B92 /* UICollectionFlowLayout+Elements.swift in Sources */,
 				7177CB5927296E1F00ADF765 /* MovieCatalogViewController.swift in Sources */,
 				7177CB8A2729869D00ADF765 /* MainCoordinator.swift in Sources */,
 				7177CB952729EFD500ADF765 /* MovieModel.swift in Sources */,
+				71008EF8272B2CEE000F6B92 /* NSObject+Elements.swift in Sources */,
 				71008EDB272AD1BB000F6B92 /* MovieCatalogCoordinator.swift in Sources */,
+				71008EF2272B2BF6000F6B92 /* UINavigationController+Elements.swift in Sources */,
 				7177CB5527296E1F00ADF765 /* AppDelegate.swift in Sources */,
 				71008ED4272AB7D0000F6B92 /* MovieCatalogViewModel.swift in Sources */,
+				71008EF0272B2B6E000F6B92 /* UICollectionView+Elements.swift in Sources */,
 				7177CB5727296E1F00ADF765 /* SceneDelegate.swift in Sources */,
+				71008EFB272B2FB6000F6B92 /* MovieCatalogCell.swift in Sources */,
 				71008ED2272AB141000F6B92 /* MoviePageModel.swift in Sources */,
 				7177CB912729EC8400ADF765 /* MovieCatalogRepository.swift in Sources */,
 				7177CB982729F10500ADF765 /* NetworkResponseCompletion.swift in Sources */,
 				71008ED8272AB93E000F6B92 /* Completion.swift in Sources */,
 				7177CBA32729F8A300ADF765 /* Logger.swift in Sources */,
+				71008EEE272B286B000F6B92 /* NSLayoutConstraints+Elements.swift in Sources */,
 				7177CBA6272A01F400ADF765 /* FlixNetworkService.swift in Sources */,
 				71008EEC272B212D000F6B92 /* NSLocalizedString+Elements.swift in Sources */,
 				71008EDF272B0ECC000F6B92 /* Theme.swift in Sources */,
+				71008EF6272B2C1D000F6B92 /* UIViewController+Elements.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

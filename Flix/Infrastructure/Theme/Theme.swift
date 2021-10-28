@@ -43,7 +43,7 @@ enum Const {
         
     enum Color {
         
-        //            static let commentBox = lightGray
+                    static let backgroundColor = UIColor(named: "backgroundColor")
         //            static let trackColor = Color.actionButtonColor
         //            static let trackBackGroundColor = lightGray
         //            static let textColor = linkColor
