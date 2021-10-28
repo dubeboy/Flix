@@ -49,6 +49,7 @@ open class AbstractCoordinator: NSObject, Coordinator, UINavigationControllerDel
     }
     
     /// Default Implementation does nothing
+    @discardableResult
     func start() -> Self {
         self
     }
@@ -90,7 +91,10 @@ open class AbstractCoordinator: NSObject, Coordinator, UINavigationControllerDel
 // The main screen
 
 class MainCoordinator: AbstractCoordinator {
-    
+    override func start() -> Self {
+        startMovieCatalogViewController()
+        return self
+    }
 }
 
 

@@ -10,7 +10,8 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
+    var coordinators: [Coordinator]?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow()
@@ -21,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = tabBarController
         self.window = window
         window.makeKeyAndVisible()
-        return true
         return true
     }
 
@@ -38,7 +38,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+}
 
-
+func createTabBarCoordinators(tabBarController: UITabBarController) -> [Coordinator] {
+    [
+        // They all share the same tab controller
+        MainCoordinator(tabBarController)
+    ]
 }
 

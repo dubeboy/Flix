@@ -11,10 +11,10 @@
 		71008ED4272AB7D0000F6B92 /* MovieCatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008ED3272AB7D0000F6B92 /* MovieCatalogViewModel.swift */; };
 		71008ED8272AB93E000F6B92 /* Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008ED7272AB93E000F6B92 /* Completion.swift */; };
 		71008EDB272AD1BB000F6B92 /* MovieCatalogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008EDA272AD1BB000F6B92 /* MovieCatalogCoordinator.swift */; };
+		71008EDF272B0ECC000F6B92 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008EDE272B0ECC000F6B92 /* Theme.swift */; };
 		7177CB5527296E1F00ADF765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5427296E1F00ADF765 /* AppDelegate.swift */; };
 		7177CB5727296E1F00ADF765 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5627296E1F00ADF765 /* SceneDelegate.swift */; };
 		7177CB5927296E1F00ADF765 /* MovieCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5827296E1F00ADF765 /* MovieCatalogViewController.swift */; };
-		7177CB5C27296E1F00ADF765 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7177CB5A27296E1F00ADF765 /* Main.storyboard */; };
 		7177CB5E27296E2000ADF765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7177CB5D27296E2000ADF765 /* Assets.xcassets */; };
 		7177CB6127296E2000ADF765 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7177CB5F27296E2000ADF765 /* LaunchScreen.storyboard */; };
 		7177CB6C27296E2000ADF765 /* FlixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB6B27296E2000ADF765 /* FlixTests.swift */; };
@@ -51,11 +51,11 @@
 		71008ED3272AB7D0000F6B92 /* MovieCatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCatalogViewModel.swift; sourceTree = "<group>"; };
 		71008ED7272AB93E000F6B92 /* Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Completion.swift; sourceTree = "<group>"; };
 		71008EDA272AD1BB000F6B92 /* MovieCatalogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCatalogCoordinator.swift; sourceTree = "<group>"; };
+		71008EDE272B0ECC000F6B92 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		7177CB5127296E1F00ADF765 /* Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7177CB5427296E1F00ADF765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7177CB5627296E1F00ADF765 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7177CB5827296E1F00ADF765 /* MovieCatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCatalogViewController.swift; sourceTree = "<group>"; };
-		7177CB5B27296E1F00ADF765 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7177CB5D27296E2000ADF765 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7177CB6027296E2000ADF765 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7177CB6227296E2000ADF765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,6 +114,21 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		71008EDC272B06CE000F6B92 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		71008EDD272B0EB5000F6B92 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				71008EDE272B0ECC000F6B92 /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		7177CB4827296E1E00ADF765 = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +159,6 @@
 				7177CB87272982FE00ADF765 /* Feature */,
 				7177CB5427296E1F00ADF765 /* AppDelegate.swift */,
 				7177CB5627296E1F00ADF765 /* SceneDelegate.swift */,
-				7177CB5A27296E1F00ADF765 /* Main.storyboard */,
 				7177CB5D27296E2000ADF765 /* Assets.xcassets */,
 				7177CB5F27296E2000ADF765 /* LaunchScreen.storyboard */,
 				7177CB6227296E2000ADF765 /* Info.plist */,
@@ -172,6 +186,7 @@
 		7177CB87272982FE00ADF765 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				71008EDC272B06CE000F6B92 /* Settings */,
 				7177CB8B2729E3FF00ADF765 /* MovieCatalog */,
 			);
 			path = Feature;
@@ -258,6 +273,7 @@
 		7177CB9E2729F7F700ADF765 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				71008EDD272B0EB5000F6B92 /* Theme */,
 				7177CB9F2729F80B00ADF765 /* Elements */,
 			);
 			path = Infrastructure;
@@ -407,7 +423,6 @@
 			files = (
 				7177CB6127296E2000ADF765 /* LaunchScreen.storyboard in Resources */,
 				7177CB5E27296E2000ADF765 /* Assets.xcassets in Resources */,
-				7177CB5C27296E1F00ADF765 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +460,7 @@
 				71008ED8272AB93E000F6B92 /* Completion.swift in Sources */,
 				7177CBA32729F8A300ADF765 /* Logger.swift in Sources */,
 				7177CBA6272A01F400ADF765 /* FlixNetworkService.swift in Sources */,
+				71008EDF272B0ECC000F6B92 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,14 +497,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7177CB5A27296E1F00ADF765 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7177CB5B27296E1F00ADF765 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7177CB5F27296E2000ADF765 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -551,7 +559,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -606,7 +614,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

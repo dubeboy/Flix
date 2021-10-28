@@ -8,16 +8,16 @@
 import Foundation
 
 protocol MovieCatalogCoordinator: AnyObject {
-    func startMovieCatalogViewController() -> MovieCatalogViewController
+    func startMovieCatalogViewController()
 }
 
 extension MainCoordinator: MovieCatalogCoordinator {
-    func startMovieCatalogViewController() -> MovieCatalogViewController {
+    func startMovieCatalogViewController()  {
         navigationController.delegate = self
         let viewController = MovieCatalogViewController()
         viewController.coordinator = self
         viewController.viewModel = MovieCatalogViewModelImpl()
-        return viewController
+        navigationController.pushViewController(viewController, animated: true)
     }
 }
 
