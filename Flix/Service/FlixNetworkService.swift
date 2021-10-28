@@ -15,3 +15,15 @@ struct FlixNetworkService: Service {
     @GET("https://api.themoviedb.org/3/movie/upcoming")
     var getUpcomingMovies: MoviePageModel
 }
+
+/// We maintain a static reference to our service
+@propertyWrapper
+struct SingletonServiceInstance {
+    
+    @Autowired
+    static var service: FlixNetworkService
+    
+    var wrappedValue: FlixNetworkService {
+        Self.service
+    }
+}

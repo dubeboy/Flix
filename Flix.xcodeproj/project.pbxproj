@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		71008ED2272AB141000F6B92 /* MoviePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008ED1272AB141000F6B92 /* MoviePageModel.swift */; };
+		71008ED4272AB7D0000F6B92 /* MovieCatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008ED3272AB7D0000F6B92 /* MovieCatalogViewModel.swift */; };
+		71008ED8272AB93E000F6B92 /* Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008ED7272AB93E000F6B92 /* Completion.swift */; };
 		7177CB5527296E1F00ADF765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5427296E1F00ADF765 /* AppDelegate.swift */; };
 		7177CB5727296E1F00ADF765 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5627296E1F00ADF765 /* SceneDelegate.swift */; };
 		7177CB5927296E1F00ADF765 /* MovieCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5827296E1F00ADF765 /* MovieCatalogViewController.swift */; };
@@ -45,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		71008ED1272AB141000F6B92 /* MoviePageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePageModel.swift; sourceTree = "<group>"; };
+		71008ED3272AB7D0000F6B92 /* MovieCatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCatalogViewModel.swift; sourceTree = "<group>"; };
+		71008ED7272AB93E000F6B92 /* Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Completion.swift; sourceTree = "<group>"; };
 		7177CB5127296E1F00ADF765 /* Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7177CB5427296E1F00ADF765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7177CB5627296E1F00ADF765 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71008ED5272AB912000F6B92 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71008ED7272AB93E000F6B92 /* Completion.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7177CB4827296E1E00ADF765 = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +188,7 @@
 		7177CB8C2729E42E00ADF765 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				71008ED3272AB7D0000F6B92 /* MovieCatalogViewModel.swift */,
 				7177CB5827296E1F00ADF765 /* MovieCatalogViewController.swift */,
 				7177CB8D2729E43800ADF765 /* Widget */,
 			);
@@ -224,6 +237,7 @@
 		7177CB9D2729F67000ADF765 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				71008ED5272AB912000F6B92 /* View */,
 				7177CB962729F0DF00ADF765 /* Repository */,
 				7177CB992729F2C300ADF765 /* Model */,
 			);
@@ -411,10 +425,12 @@
 				7177CB8A2729869D00ADF765 /* MainCoordinator.swift in Sources */,
 				7177CB952729EFD500ADF765 /* MovieModel.swift in Sources */,
 				7177CB5527296E1F00ADF765 /* AppDelegate.swift in Sources */,
+				71008ED4272AB7D0000F6B92 /* MovieCatalogViewModel.swift in Sources */,
 				7177CB5727296E1F00ADF765 /* SceneDelegate.swift in Sources */,
 				71008ED2272AB141000F6B92 /* MoviePageModel.swift in Sources */,
 				7177CB912729EC8400ADF765 /* MovieCatalogRepository.swift in Sources */,
 				7177CB982729F10500ADF765 /* NetworkResponseCompletion.swift in Sources */,
+				71008ED8272AB93E000F6B92 /* Completion.swift in Sources */,
 				7177CBA32729F8A300ADF765 /* Logger.swift in Sources */,
 				7177CBA6272A01F400ADF765 /* FlixNetworkService.swift in Sources */,
 			);
