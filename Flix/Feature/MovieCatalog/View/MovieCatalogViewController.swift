@@ -7,13 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MovieCatalogViewController: UIViewController {
+    
+    // Force unwrap these because they should be injected by the coordinator
+    weak var coordinator: MovieCatalogCoordinator!
+    var viewModel: MovieCatalogViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
 }
 

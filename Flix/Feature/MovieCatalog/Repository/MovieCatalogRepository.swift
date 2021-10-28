@@ -8,15 +8,18 @@
 import Foundation
 
 protocol MovieCatalogRepository {
-    func getMovies(result: @escaping NetworkResponseCompletion<[Movie]>)
+    func getUpComingMovies(result: @escaping NetworkResponseCompletion<[Movie]>)
 }
 
+// Merges all the datasources, might we want to get the data from the cache, then make a request
+// We removed the logic from the viewModel so make it a bit liner and so that it stricly deals with events that are comming from the view
 class MovieCatalogRepositoryImpl: MovieCatalogRepository {
     
+    // TODO: Make this testable
     @SingletonServiceInstance
-    var service: FlixNetworkService
+    private var service: FlixNetworkService
     
-    func getMovies(result: @escaping NetworkResponseCompletion<[Movie]>) {
+    func getUpComingMovies(result: @escaping NetworkResponseCompletion<[Movie]>) {
         service.$getUpcomingMovies { response in
             Logger.log("The encoded struct response is: ")
             Logger.i(response)

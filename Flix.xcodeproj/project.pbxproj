@@ -10,6 +10,7 @@
 		71008ED2272AB141000F6B92 /* MoviePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008ED1272AB141000F6B92 /* MoviePageModel.swift */; };
 		71008ED4272AB7D0000F6B92 /* MovieCatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008ED3272AB7D0000F6B92 /* MovieCatalogViewModel.swift */; };
 		71008ED8272AB93E000F6B92 /* Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008ED7272AB93E000F6B92 /* Completion.swift */; };
+		71008EDB272AD1BB000F6B92 /* MovieCatalogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008EDA272AD1BB000F6B92 /* MovieCatalogCoordinator.swift */; };
 		7177CB5527296E1F00ADF765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5427296E1F00ADF765 /* AppDelegate.swift */; };
 		7177CB5727296E1F00ADF765 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5627296E1F00ADF765 /* SceneDelegate.swift */; };
 		7177CB5927296E1F00ADF765 /* MovieCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5827296E1F00ADF765 /* MovieCatalogViewController.swift */; };
@@ -49,6 +50,7 @@
 		71008ED1272AB141000F6B92 /* MoviePageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePageModel.swift; sourceTree = "<group>"; };
 		71008ED3272AB7D0000F6B92 /* MovieCatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCatalogViewModel.swift; sourceTree = "<group>"; };
 		71008ED7272AB93E000F6B92 /* Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Completion.swift; sourceTree = "<group>"; };
+		71008EDA272AD1BB000F6B92 /* MovieCatalogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCatalogCoordinator.swift; sourceTree = "<group>"; };
 		7177CB5127296E1F00ADF765 /* Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7177CB5427296E1F00ADF765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7177CB5627296E1F00ADF765 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 				71008ED7272AB93E000F6B92 /* Completion.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		71008ED9272AD194000F6B92 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				71008EDA272AD1BB000F6B92 /* MovieCatalogCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		7177CB4827296E1E00ADF765 = {
@@ -178,6 +188,7 @@
 		7177CB8B2729E3FF00ADF765 /* MovieCatalog */ = {
 			isa = PBXGroup;
 			children = (
+				71008ED9272AD194000F6B92 /* Coordinator */,
 				7177CB932729EFC200ADF765 /* Model */,
 				7177CB8F2729EB1000ADF765 /* Repository */,
 				7177CB8C2729E42E00ADF765 /* View */,
@@ -424,6 +435,7 @@
 				7177CB5927296E1F00ADF765 /* MovieCatalogViewController.swift in Sources */,
 				7177CB8A2729869D00ADF765 /* MainCoordinator.swift in Sources */,
 				7177CB952729EFD500ADF765 /* MovieModel.swift in Sources */,
+				71008EDB272AD1BB000F6B92 /* MovieCatalogCoordinator.swift in Sources */,
 				7177CB5527296E1F00ADF765 /* AppDelegate.swift in Sources */,
 				71008ED4272AB7D0000F6B92 /* MovieCatalogViewModel.swift in Sources */,
 				7177CB5727296E1F00ADF765 /* SceneDelegate.swift in Sources */,
@@ -615,7 +627,8 @@
 				INFOPLIST_FILE = Flix/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -642,7 +655,8 @@
 				INFOPLIST_FILE = Flix/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

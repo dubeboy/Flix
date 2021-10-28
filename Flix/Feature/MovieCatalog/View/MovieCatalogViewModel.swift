@@ -16,4 +16,30 @@ protocol MovieCatalogViewModel {
     func getUpComingMovies(completion: @escaping Completion<[Movie]>, error: @escaping Completion<String>)
 }
 
+class MovieCatalogViewModelImpl: MovieCatalogViewModel {
+    
+    private let repository: MovieCatalogRepository
+    
+    // Handrolled dependecey injection ,
+    // it will make it easy for us to introduce a dependecy
+    // injection library like swinject in the future and keeping things simple for now
+    // This dependency injection will make it easy for us to inject a
+    // different implementation of MovieCatalogRepository when testing
+    // `repository` default parameter makes the call site (view) easy
+    init(_ repository: MovieCatalogRepository = MovieCatalogRepositoryImpl()) {
+        self.repository = repository
+    }
+    
+    func getUpComingMovies(completion: @escaping Completion<[Movie]>, error: @escaping Completion<String>) {
+        repository.getUpComingMovies { response in
+            switch response {
+                case .success(let movies):
+                    Logger.i(movies)
+                case .failure(let error):
+                    Logger.i(error)
+            }
+        }
+    }
+}
+
 
