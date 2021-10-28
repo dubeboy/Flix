@@ -43,60 +43,13 @@ enum Const {
         
     enum Color {
         
-        fileprivate enum AppThemeColors {
-            case grayItem
-            case background
-            case widget
-            case button
-            case label
-            case link
-        }
-        
-        enum MovieCatalog {
-            static let commentBox = lightGray
-            static let trackColor = Color.actionButtonColor
-            static let trackBackGroundColor = lightGray
-            static let textColor = linkColor
-            static let warningMaximumTextLength = UIColor.systemYellow
-            static let alertMaximumTextLength = UIColor.systemRed
-        }
-      
+        //            static let commentBox = lightGray
+        //            static let trackColor = Color.actionButtonColor
+        //            static let trackBackGroundColor = lightGray
+        //            static let textColor = linkColor
+        //            static let warningMaximumTextLength = UIColor.systemYellow
+        //            static let alertMaximumTextLength =
     }
     
-    private static func getColor(color: Color.AppThemeColors) -> UIColor {
-        switch color {
-            case .grayItem:
-                if  #available(iOS 13.0, *) {
-                    return UIColor.systemGray6
-                } else {
-                    return UIColor.lightGray
-                }
-            case .background:
-                if  #available(iOS 13.0, *) {
-                    return UIColor.systemGray5
-                } else {
-                    return UIColor.gray
-                }
-            case .widget:
-                if  #available(iOS 13.0, *) {
-                    return UIColor.systemBackground
-                } else {
-                    return UIColor.white
-                }
-            case .button:
-                return UIColor(named: "blueActionButton")!
-            case .label:
-                if  #available(iOS 13.0, *) {
-                    return UIColor.label
-                } else {
-                    return UIColor.lightText
-                }
-            case .link:
-                if  #available(iOS 13.0, *) {
-                    return UIColor.link
-                } else {
-                    return UIColor.blue
-                }
-        }
-    }
+
 }

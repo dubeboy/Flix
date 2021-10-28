@@ -22,7 +22,8 @@ protocol MovieCatalogViewModel {
 
 class MovieCatalogViewModelImpl: MovieCatalogViewModel {
     
-    var title: String
+    // Since this property is defined protocol a
+    let title: String = "moviesCatalogHomeTitle".localized
     
     private let repository: MovieCatalogRepository
     

@@ -8,6 +8,7 @@
   
 */
 
-"appName"="Flix"
-"moviesCatalogHome"="Movies"
-"errors"=
+"appName"="Flix";
+
+// Movies Catalog Strings
+"moviesCatalogHomeTitle"="Movies";
