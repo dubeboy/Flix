@@ -28,24 +28,15 @@ enum Const {
     enum Assets {
         
         enum MovieCatalog {
-            static let icon: UIImage? = getSystemAsset(systemName: "arrow.up")
-           
+            static let icon: UIImage? = getSystemAsset(systemName: "film")
         }
         
         private static func getSystemAsset(systemName: String) -> UIImage? {
-            if #available(iOS 13, *) {
-                let image = UIImage(systemName: systemName)
-                if image == nil {
-                    Logger.log("\(#function) image is nil")
-                }
-                return image
-            } else {
-                let image = UIImage(named: systemName)
-                if image == nil {
-                    Logger.log("\(#function): image is nil")
-                }
-                return image
+            let image = UIImage(named: systemName)
+            if image == nil {
+                Logger.log("\(#function): image is nil")
             }
+            return image
         }
         
     }

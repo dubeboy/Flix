@@ -12,6 +12,7 @@
 		71008ED8272AB93E000F6B92 /* Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008ED7272AB93E000F6B92 /* Completion.swift */; };
 		71008EDB272AD1BB000F6B92 /* MovieCatalogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008EDA272AD1BB000F6B92 /* MovieCatalogCoordinator.swift */; };
 		71008EDF272B0ECC000F6B92 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008EDE272B0ECC000F6B92 /* Theme.swift */; };
+		71008EE5272B1D57000F6B92 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71008EE3272B1D56000F6B92 /* Localizable.strings */; };
 		7177CB5527296E1F00ADF765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5427296E1F00ADF765 /* AppDelegate.swift */; };
 		7177CB5727296E1F00ADF765 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5627296E1F00ADF765 /* SceneDelegate.swift */; };
 		7177CB5927296E1F00ADF765 /* MovieCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5827296E1F00ADF765 /* MovieCatalogViewController.swift */; };
@@ -52,6 +53,9 @@
 		71008ED7272AB93E000F6B92 /* Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Completion.swift; sourceTree = "<group>"; };
 		71008EDA272AD1BB000F6B92 /* MovieCatalogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCatalogCoordinator.swift; sourceTree = "<group>"; };
 		71008EDE272B0ECC000F6B92 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		71008EE0272B1C13000F6B92 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		71008EE4272B1D56000F6B92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Flix/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		71008EE6272B1DC6000F6B92 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Flix/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7177CB5127296E1F00ADF765 /* Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7177CB5427296E1F00ADF765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7177CB5627296E1F00ADF765 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 		7177CB4827296E1E00ADF765 = {
 			isa = PBXGroup;
 			children = (
+				71008EE3272B1D56000F6B92 /* Localizable.strings */,
 				7177CB7427296E2000ADF765 /* FlixUITests */,
 				7177CB5327296E1F00ADF765 /* Flix */,
 				7177CB6A27296E2000ADF765 /* FlixTests */,
@@ -400,6 +405,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 7177CB4827296E1E00ADF765;
 			packageReferences = (
@@ -423,6 +429,7 @@
 			files = (
 				7177CB6127296E2000ADF765 /* LaunchScreen.storyboard in Resources */,
 				7177CB5E27296E2000ADF765 /* Assets.xcassets in Resources */,
+				71008EE5272B1D57000F6B92 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,10 +504,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		71008EE3272B1D56000F6B92 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71008EE4272B1D56000F6B92 /* Base */,
+				71008EE6272B1DC6000F6B92 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		7177CB5F27296E2000ADF765 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7177CB6027296E2000ADF765 /* Base */,
+				71008EE0272B1C13000F6B92 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -512,6 +529,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -573,6 +591,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
