@@ -42,13 +42,11 @@ enum Const {
     }
         
     enum Color {
-        
-                    static let backgroundColor = UIColor(named: "backgroundColor")
-        //            static let trackColor = Color.actionButtonColor
-        //            static let trackBackGroundColor = lightGray
-        //            static let textColor = linkColor
-        //            static let warningMaximumTextLength = UIColor.systemYellow
-        //            static let alertMaximumTextLength =
+    
+        static let backgroundColor = UIColor(named: "backgroundColor")
+        static let appNameColor = UIColor(named: "appNameColor")
+
+        static let white = UIColor.white
     }
     
 

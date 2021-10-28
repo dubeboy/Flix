@@ -13,7 +13,7 @@ struct FlixNetworkService: Service {
     var query = ["api_key" : "1b5b100291ca41efa1d85ad150587d86", "langauge": "en-US"]
     
     @GET("https://api.themoviedb.org/3/movie/upcoming")
-    var getUpcomingMovies: MoviePageModel
+    var getUpcomingMovies: MoviePageEntity
 }
 
 /// We maintain a static reference to our service

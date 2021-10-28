@@ -8,12 +8,24 @@
 import UIKit
 
 class MovieCatalogCell: UICollectionViewCell {
+    
+    let imageView = UIImageView()
+    let popularityLabel = UILabel()
+//
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
         contentView.translatesAutoresizingMaskIntoConstraints = false
         configureCell()
+        configureBackgroundImage()
+    }
+    
+    override func prepareForReuse() {
+        // Not required since time we reuse it we set these fields anyway
+        imageView.image = nil
+        popularityLabel.text = ""
     }
 }
 
@@ -22,9 +34,34 @@ class MovieCatalogCell: UICollectionViewCell {
 extension MovieCatalogCell {
     private func configureCell() {
         configureContentView()
+        configureSelf()
     }
     
-    private func configure
+    private func configureSelf() {
+        layer.cornerRadius = Const.View.radius
+        layer.masksToBounds = true
+        isUserInteractionEnabled = true
+        contentView.makeRound()
+
+        addShadow()
+    }
+    
+    private func configureBackgroundImage() {
+        imageView.autoresizingOff()
+        contentView.addSubview(imageView)
+        contentView --> contentView // Do Leading, trailing, top, bottom anchor at once
+        imageView.contentMode = .scaleAspectFill
+    }
+    
+    private func configureMovieName() {
+        let container = UIView()
+        container.autoresizingOff()
+        popularityLabel.autoresizingOff()
+        container.addSubview(popularityLabel)
+        popularityLabel.bottomAnchor --> contentView.bottomAnchor + -Const.View.k8
+        popularityLabel.centerYAnchor --> contentView.centerYAnchor
+//        label.font =
+    }
 }
 
 

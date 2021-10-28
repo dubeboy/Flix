@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Movie
-struct MoviePageModel: Codable {
+struct MoviePageEntity: Codable {
     // Make everything nullable to avoid possible returned null values
     // crashing our app and that Codable doesn't try and decode a null
     // to a non nullable Type
@@ -16,7 +16,7 @@ struct MoviePageModel: Codable {
     // Most of these will never be null as specified in the schema but
     // but its okay to not trust the backend 😅
     var page: Int?
-    var results: [Movie]?
+    var results: [MovieEntity]?
     var dates: Dates?
     var totalPages, totalResults: Int?
     

@@ -22,13 +22,6 @@ extension UICollectionView {
         ) as! T
     }
     
-    func register<T: UICollectionViewCell>(_ fromNib: T.Type) {
-        register(
-            UINib(nibName: T.reuseIdentifier, bundle: Bundle.main),
-            forCellWithReuseIdentifier: T.reuseIdentifier
-        )
-    }
-    
     func registerClass<T: UICollectionViewCell>(_ `class`: T.Type) {
         register(
             `class`,

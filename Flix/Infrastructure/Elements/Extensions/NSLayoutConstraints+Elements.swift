@@ -6,7 +6,7 @@
 //  Copyright © 2020 com.github.aweh. All rights reserved.
 //
 
-// DISCLAIMER - COPIED FROM ONE OF MY SIDE PROJECTS still need to turn it into a library 😅
+// DISCLAIMER - COPIED FROM ONE OF MY SIDE PROJECTS still need to turned it into a library 😅
 
 import UIKit
 

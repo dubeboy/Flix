@@ -9,6 +9,7 @@ import Foundation
 
 protocol MovieCatalogViewModel {
     var title: String { get }
+    var moviesCount: Int { get }
     
     
     // We have two callbacks to the view
@@ -16,11 +17,16 @@ protocol MovieCatalogViewModel {
     // The completion with error with a simple string that can be displayed on the screen
     //
     // We used two completion because we want the view to be a dumb and as linear as possible(not many if statments)
-    func getUpComingMovies(completion: @escaping Completion<[Movie]>, error: @escaping Completion<String>)
+    func getUpComingMovies(completion: @escaping Completion<[MovieEntity]>, error: @escaping Completion<String>)
     
 }
 
 class MovieCatalogViewModelImpl: MovieCatalogViewModel {
+    
+    var moviesCount: Int
+    // We could rename MoviePageModel to MoviePageEntity and then create Model
+    // for this ViewModel in which transform Entity to this viewModel
+    var movieResult: [MoviePageEntity]
     
     // Since this property is defined protocol a
     let title: String = "moviesCatalogHomeTitle".localized
@@ -37,7 +43,7 @@ class MovieCatalogViewModelImpl: MovieCatalogViewModel {
         self.repository = repository
     }
     
-    func getUpComingMovies(completion: @escaping Completion<[Movie]>, error: @escaping Completion<String>) {
+    func getUpComingMovies(completion: @escaping Completion<[MovieEntity]>, error: @escaping Completion<String>) {
         repository.getUpComingMovies { response in
             switch response {
                 case .success(let movies):

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MovieCatalogRepository {
-    func getUpComingMovies(result: @escaping NetworkResponseCompletion<[Movie]>)
+    func getUpComingMovies(result: @escaping NetworkResponseCompletion<[MovieEntity]>)
 }
 
 // Merges all the datasources, might we want to get the data from the cache, then make a request
@@ -19,7 +19,7 @@ class MovieCatalogRepositoryImpl: MovieCatalogRepository {
     @SingletonServiceInstance
     private var service: FlixNetworkService
     
-    func getUpComingMovies(result: @escaping NetworkResponseCompletion<[Movie]>) {
+    func getUpComingMovies(result: @escaping NetworkResponseCompletion<[MovieEntity]>) {
         service.$getUpcomingMovies { response in
             Logger.log("The encoded struct response is: ")
             Logger.i(response)

@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Result
-struct Movie: Codable {
+struct MovieEntity: Codable {
     var posterPath: String?
     var adult: Bool?
     var overview, releaseDate: String?
