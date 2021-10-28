@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71008ED2272AB141000F6B92 /* MoviePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008ED1272AB141000F6B92 /* MoviePageModel.swift */; };
 		7177CB5527296E1F00ADF765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5427296E1F00ADF765 /* AppDelegate.swift */; };
 		7177CB5727296E1F00ADF765 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5627296E1F00ADF765 /* SceneDelegate.swift */; };
 		7177CB5927296E1F00ADF765 /* MovieCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5827296E1F00ADF765 /* MovieCatalogViewController.swift */; };
@@ -18,7 +19,7 @@
 		7177CB7827296E2000ADF765 /* FlixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB7727296E2000ADF765 /* FlixUITestsLaunchTests.swift */; };
 		7177CB8A2729869D00ADF765 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB892729869D00ADF765 /* MainCoordinator.swift */; };
 		7177CB912729EC8400ADF765 /* MovieCatalogRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB902729EC8400ADF765 /* MovieCatalogRepository.swift */; };
-		7177CB952729EFD500ADF765 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB942729EFD500ADF765 /* Movie.swift */; };
+		7177CB952729EFD500ADF765 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB942729EFD500ADF765 /* MovieModel.swift */; };
 		7177CB982729F10500ADF765 /* NetworkResponseCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB972729F10500ADF765 /* NetworkResponseCompletion.swift */; };
 		7177CB9C2729F5B400ADF765 /* Merchant in Frameworks */ = {isa = PBXBuildFile; productRef = 7177CB9B2729F5B400ADF765 /* Merchant */; };
 		7177CBA32729F8A300ADF765 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CBA22729F8A300ADF765 /* Logger.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		71008ED1272AB141000F6B92 /* MoviePageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePageModel.swift; sourceTree = "<group>"; };
 		7177CB5127296E1F00ADF765 /* Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7177CB5427296E1F00ADF765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7177CB5627296E1F00ADF765 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +60,7 @@
 		7177CB7727296E2000ADF765 /* FlixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlixUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7177CB892729869D00ADF765 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		7177CB902729EC8400ADF765 /* MovieCatalogRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCatalogRepository.swift; sourceTree = "<group>"; };
-		7177CB942729EFD500ADF765 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		7177CB942729EFD500ADF765 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		7177CB972729F10500ADF765 /* NetworkResponseCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponseCompletion.swift; sourceTree = "<group>"; };
 		7177CBA22729F8A300ADF765 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		7177CBA5272A01F400ADF765 /* FlixNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlixNetworkService.swift; sourceTree = "<group>"; };
@@ -198,7 +200,8 @@
 		7177CB932729EFC200ADF765 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7177CB942729EFD500ADF765 /* Movie.swift */,
+				7177CB942729EFD500ADF765 /* MovieModel.swift */,
+				71008ED1272AB141000F6B92 /* MoviePageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -406,9 +409,10 @@
 			files = (
 				7177CB5927296E1F00ADF765 /* MovieCatalogViewController.swift in Sources */,
 				7177CB8A2729869D00ADF765 /* MainCoordinator.swift in Sources */,
-				7177CB952729EFD500ADF765 /* Movie.swift in Sources */,
+				7177CB952729EFD500ADF765 /* MovieModel.swift in Sources */,
 				7177CB5527296E1F00ADF765 /* AppDelegate.swift in Sources */,
 				7177CB5727296E1F00ADF765 /* SceneDelegate.swift in Sources */,
+				71008ED2272AB141000F6B92 /* MoviePageModel.swift in Sources */,
 				7177CB912729EC8400ADF765 /* MovieCatalogRepository.swift in Sources */,
 				7177CB982729F10500ADF765 /* NetworkResponseCompletion.swift in Sources */,
 				7177CBA32729F8A300ADF765 /* Logger.swift in Sources */,
