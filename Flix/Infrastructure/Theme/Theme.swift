@@ -20,7 +20,7 @@ enum Const {
         static let k1: CGFloat = 1
         static let k2: CGFloat = 2
         static let k4: CGFloat = 4
-        static let radius: CGFloat = 10
+        static let radius: CGFloat = 5
         static let borderWidth: CGFloat = k2
     }
     
@@ -28,6 +28,8 @@ enum Const {
     enum Assets {
         //Shared assets
         static let placeHolderImage: UIImage? = getSystemAsset(systemName: "moviePlaceHolder")
+        static let appIcon: UIImage? = getSystemAsset(systemName: "netflixLogo")
+        
         
         // Assets Unique to this VC
         enum MovieCatalog {
@@ -52,6 +54,7 @@ enum Const {
         
         static let backgroundColor = UIColor(named: "backgroundColor") ?? UIColor.black
         static let appNameColor = UIColor(named: "appNameColor") ?? UIColor.red
+        static let tabBarIconsTint = UIColor(named: "tabBarTintColor") ?? UIColor.white
 
         static let white = UIColor.white
         static let clear = UIColor.clear

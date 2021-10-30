@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: scene)
         
         let tabBarController = UITabBarController()
+        UITabBar.appearance().tintColor = Const.Color.tabBarIconsTint
         
         coordinators = createTabBarCoordinators(tabBarController: tabBarController).map { $0.start() }
         tabBarController.viewControllers = coordinators?.map { $0.navigationController }

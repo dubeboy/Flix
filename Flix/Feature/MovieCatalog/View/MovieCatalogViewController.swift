@@ -22,8 +22,8 @@ class MovieCatalogViewController: UICollectionViewController {
         flowLayout.minimumLineSpacing = Const.View.k8
         flowLayout.minimumInteritemSpacing = Const.View.k8
         flowLayout.scrollDirection = .vertical
-        
         super.init(collectionViewLayout: flowLayout)
+
     }
     
     // We will not need this constructor because we'll not instatiate this from xibs
@@ -33,15 +33,13 @@ class MovieCatalogViewController: UICollectionViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.isTranslucent = false
+        UITabBar.appearance().barTintColor = UIColor.black
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = viewModel.title
-        let textAttributes: [NSAttributedString.Key : Any] = [.foregroundColor: Const.Color.appNameColor,
-                              .font: UIFont.boldSystemFont(ofSize: 20)]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
-        Logger.i("started MovieCatalogViewController in \(#function)")
+        configureSelf()
         configureSpinner()
         setupCollectionView()
         loadData()
@@ -51,6 +49,7 @@ class MovieCatalogViewController: UICollectionViewController {
 // MARK: - Datasources & Delegate
 
 extension MovieCatalogViewController {
+    
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
         viewModel.moviesCount
@@ -63,7 +62,12 @@ extension MovieCatalogViewController {
         return cell
     }
     
-    func configure(cell: MovieCatalogCell, at indexPath: IndexPath) {
+//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let movie = viewModel.getMovie(at: indexPath)
+//
+//    }
+    
+    private func configure(cell: MovieCatalogCell, at indexPath: IndexPath) {
         guard let url = viewModel.getBackDropUrl(at: indexPath) else {
             return
         }
@@ -110,9 +114,12 @@ extension MovieCatalogViewController {
         spinner.stopAnimating()
     }
     
-    private func showErrorText() {
-        
+    private func configureNavigationTitleView() {
+        let image = UIImageView(image:Const.Assets.appIcon)
+        image.contentMode = .scaleAspectFit
+        navigationItem.titleView =  image
     }
+    
     
     private func loadData() {
         viewModel.getUpComingMovies { [weak self] in // This behaves like a clousure that doesn't have any arguments dont need to add the _
@@ -123,6 +130,14 @@ extension MovieCatalogViewController {
             self.stopSpinner()
             self.presentToast(message: errorString)
         }
+    }
+    
+    private func configureSelf() {
+        tabBarItem = UITabBarItem(title: viewModel.title, image: Const.Assets.MovieCatalog.icon, tag: 90)
+        tabBarController?.tabBar.isTranslucent = false
+        tabBarController?.tabBar.barTintColor = .black
+//        tabBarController?.tabBar.isHidden = true
+        configureNavigationTitleView()
     }
 
 }

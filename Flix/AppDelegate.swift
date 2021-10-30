@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow()
         let tabBarController = UITabBarController()
+        UITabBar.appearance().tintColor = Const.Color.tabBarIconsTint
         
         coordinators = createTabBarCoordinators(tabBarController: tabBarController).map { $0.start() }
         tabBarController.viewControllers = coordinators?.map { $0.navigationController }
