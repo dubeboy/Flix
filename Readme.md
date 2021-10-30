@@ -3,7 +3,7 @@
 Flix is an app the uses the the [movies database](https://www.themoviedb.org/) to get upcoming movies, with inifite scrolling
 
 <center>
-    <img src="./demo.png" height="300" style="width: auto;"/>
+    <img src="./demo.png" height="750" style="width: auto;"/>
 </center>
 
 ### Libraries
@@ -40,6 +40,22 @@ I've all added abit more comminting on the code itself to explain some of myu de
 
 P.S
 The `Infrastructure/Elements/Extensions` folder containes some extensions functions that i find handy and copied this from one of my side projects, (I should make them a library by now 😅)
+
+
+### Logger
+
+We have a logger that can easily be connected a analytics engine and it does'nt log in production for security reasons and performance, imagine if we are printing huge network requests, the little things make a diffrence 😀
+### handling constraints in code
+
+we use operator overloading to help us write constraints easily, it looks like this:
+
+`v1 --> v2`
+
+this will automaticall activate the constraints, this does return the created constraint so that if you want deactivate it at some time in the future your can.
+
+there are many more overloaded operators to help with dealing with constraints in code, checkout `Infrastructure/Elements/Extensions/NSLayoutConstraints+Elements.swift`
+
+
 
 
 
