@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Flix
+
+  Created by Divine.Dube on 2021/10/28.
+ 
+ We'll store all out text that is being used by the app
+  
+*/
+
+"appName"="Flix";
+
+// Movies Catalog Strings
+"moviesCatalogHomeTitle"="Coming Soon";

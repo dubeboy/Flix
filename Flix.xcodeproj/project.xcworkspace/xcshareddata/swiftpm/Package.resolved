@@ -9,6 +9,33 @@
           "revision": "d120af1e8638c7da36c8481fd61a66c0c08dc4fc",
           "version": "5.4.4"
         }
+      },
+      {
+        "package": "Merchant",
+        "repositoryURL": "https://github.com/dubeboy/Merchant",
+        "state": {
+          "branch": "develop",
+          "revision": "b31d214b8c0446a8d230cf14aa7b3e72ae270e8f",
+          "version": null
+        }
+      },
+      {
+        "package": "Mocker",
+        "repositoryURL": "https://github.com/WeTransfer/Mocker.git",
+        "state": {
+          "branch": null,
+          "revision": "352066f1a29108548386487ae083b4115e94c1fb",
+          "version": "2.5.4"
+        }
+      },
+      {
+        "package": "SDWebImage",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImage",
+        "state": {
+          "branch": null,
+          "revision": "a72df4849408da7e5d3c1b586797b7c601c41d1b",
+          "version": "5.12.1"
+        }
       }
     ]
   },
