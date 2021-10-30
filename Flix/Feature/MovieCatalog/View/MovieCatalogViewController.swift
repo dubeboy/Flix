@@ -8,6 +8,7 @@
 import UIKit
 import SDWebImage
 
+
 class MovieCatalogViewController: UICollectionViewController {
     
     // Force unwrap these because they should be injected by the coordinator
@@ -47,7 +48,7 @@ class MovieCatalogViewController: UICollectionViewController {
 
 // MARK: - Datasources & Delegate
 
-extension MovieCatalogViewController: UICollectionViewDelegateFlowLayout {
+extension MovieCatalogViewController {
     
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
@@ -61,6 +62,11 @@ extension MovieCatalogViewController: UICollectionViewDelegateFlowLayout {
         return cell
     }
     
+    
+}
+
+// MARK: - Enanable pagination
+extension MovieCatalogViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         viewModel.isLoading ? .zero : CGSize(width: collectionView.bounds.size.width, height: 55)
     }
@@ -76,7 +82,7 @@ extension MovieCatalogViewController: UICollectionViewDelegateFlowLayout {
     override func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
         if elementKind == UICollectionView.elementKindSectionFooter {
             Logger.i("add footer")
-
+            
             let footer = view as? ActivityIndicatorFooterCell
             footer?.spinner.startAnimating()
             
@@ -118,9 +124,9 @@ extension MovieCatalogViewController {
         collectionView.backgroundColor = Const.Color.background
         
         let leftRightInset = flowLayout.sectionInset.right + flowLayout.sectionInset.left + (2 * flowLayout.minimumInteritemSpacing)
-        let itemWidth: CGFloat = (view.bounds.width - leftRightInset) / 3.0 // Didn't use UIScreen.main.bounds here because in split screens it gives us the split screens size not the window size
+        let itemWidth: CGFloat = (collectionView.bounds.width - leftRightInset) / 3.0 // Didn't use UIScreen.main.bounds here because in split screens it gives us the split screens size not the window size
         
-        let itemSize = CGSize(width: itemWidth, height: 220)
+        let itemSize = CGSize(width: itemWidth.rounded(.down), height: 220) // Have to round down because sometime we get numbers 123.6666667, then the collection view shows a two column instead of three because there isnt enough space
         flowLayout.itemSize = itemSize
         
         collectionView.registerClass(MovieCatalogCell.self)
