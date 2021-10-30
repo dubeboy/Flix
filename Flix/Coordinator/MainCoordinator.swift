@@ -68,20 +68,16 @@ open class AbstractCoordinator: NSObject, Coordinator, UINavigationControllerDel
                                    animated: Bool) {
         // means we are pushing a new view Controller
         guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {
-            Logger.i("Pushing a new view controller #navigationController")
-
             return
             
         }
         
         // this means that we already have the view on the stack , so this means we are poping the view controller
         if navigationController.viewControllers.contains(fromViewController) {
-            Logger.i("Poping viewController in  #navigationController")
             return
         }
         
         // means we are poping view Controller
-        Logger.i("Dont know what i'm doing #navigationController")
         childDidFinish(child: fromViewController as? Coordinator)
     }
 }
