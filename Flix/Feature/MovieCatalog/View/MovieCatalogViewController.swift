@@ -61,11 +61,9 @@ extension MovieCatalogViewController {
         configure(cell: cell, at: indexPath)
         return cell
     }
-    
-    
 }
 
-// MARK: - Enanable pagination
+// MARK: - Enable pagination
 extension MovieCatalogViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         viewModel.isLoading ? .zero : CGSize(width: collectionView.bounds.size.width, height: 55)
@@ -169,7 +167,7 @@ extension MovieCatalogViewController {
     private func configureSelf() {
         tabBarItem = UITabBarItem(title: viewModel.title, image: Const.Assets.MovieCatalog.icon, tag: 90)
         tabBarController?.tabBar.isTranslucent = false
-        tabBarController?.tabBar.barTintColor = .black
+        tabBarController?.tabBar.barTintColor = Const.Color.background
 //        tabBarController?.tabBar.isHidden = true
         configureNavigationTitleView()
     }
