@@ -49,7 +49,7 @@ extension UICollectionViewCell {
 
 extension UICollectionViewCell {
     func configureContentView() {
-        contentView.backgroundColor = Const.Color.backgroundColor
+        contentView.backgroundColor = Const.Color.background
         contentView.clipsToBounds = true
     }
 }

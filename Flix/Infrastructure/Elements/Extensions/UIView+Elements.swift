@@ -18,7 +18,7 @@ extension UIView {
         makeRound()
         contentMode = .scaleAspectFill
         layer.borderWidth = 0.03
-        layer.backgroundColor = Const.Color.backgroundColor.cgColor
+        layer.backgroundColor = Const.Color.background.cgColor
     }
 }
 
@@ -45,7 +45,7 @@ extension UIView {
     // TODO: check with juts adding border layer!!
     private func applyBorder(toSide: UIRectEdge) {
         let borderView = UIView()
-        borderView.backgroundColor = Const.Color.backgroundColor
+        borderView.backgroundColor = Const.Color.background
         addSubview(borderView)
         borderView.translatesAutoresizingMaskIntoConstraints = false
        

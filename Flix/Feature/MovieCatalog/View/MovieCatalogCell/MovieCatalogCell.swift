@@ -10,16 +10,17 @@ import UIKit
 class MovieCatalogCell: UICollectionViewCell {
     
     let imageView = UIImageView()
-    let popularityLabel = UILabel()
-
+    let title = UILabel()
+    let comingDate = UILabel()
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.clipsToBounds = true
-//        translatesAutoresizingMaskIntoConstraints = false
-//        contentView.translatesAutoresizingMaskIntoConstraints = false
         configureCell()
         configureBackgroundImage()
+        configureMovieInfoContainer()
     }
     
     required init?(coder: NSCoder) {
@@ -29,7 +30,7 @@ class MovieCatalogCell: UICollectionViewCell {
     override func prepareForReuse() {
         // Not required since time we reuse it we set these fields anyway
         imageView.image = nil
-        popularityLabel.text = ""
+        title.text = ""
     }
 }
 
@@ -50,17 +51,41 @@ extension MovieCatalogCell {
     private func configureBackgroundImage() {
         imageView.autoresizingOff()
         contentView.addSubview(imageView)
-        imageView --> contentView // Do Leading, trailing, top, bottom anchor at once
+        
         imageView.contentMode = .scaleAspectFill
+        
+        imageView.topAnchor --> contentView.topAnchor
+        imageView.leadingAnchor --> contentView.leadingAnchor
+        imageView.trailingAnchor --> contentView.trailingAnchor
     }
     
-    private func configureMovieName() {
+    private func configureMovieInfoContainer() {
         let container = UIView()
+        container.backgroundColor = Const.Color.infoBar
         container.autoresizingOff()
-        popularityLabel.autoresizingOff()
-        container.addSubview(popularityLabel)
-        popularityLabel.bottomAnchor --> contentView.bottomAnchor + -Const.View.k8
-        popularityLabel.centerYAnchor --> contentView.centerYAnchor
+        container.heightAnchor --> 30
+        title.autoresizingOff()
+        container.addSubview(title)
+        title.topAnchor --> container.topAnchor + Const.View.k8
+        title.leadingAnchor --> container.leadingAnchor + Const.View.k8
+        title.trailingAnchor --> container.trailingAnchor + -Const.View.k8
+        title.numberOfLines = 2
+        title.lineBreakMode = .byWordWrapping
+        title.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        
+        comingDate.autoresizingOff()
+        container.addSubview(comingDate)
+        comingDate.numberOfLines = 1
+        comingDate.topAnchor --> title.bottomAnchor + Const.View.k8
+        comingDate.leadingAnchor --> container.leadingAnchor + Const.View.k8
+        comingDate.bottomAnchor --> container.bottomAnchor + -Const.View.k8
+        comingDate.trailingAnchor --> container.trailingAnchor + -Const.View.k8
+        
+        contentView.addSubview(container)
+        container.topAnchor --> imageView.bottomAnchor // Completing the imageview's contraints , order doesn't matter as long as H, W, X, Y can be determined
+        container.bottomAnchor --> contentView.bottomAnchor
+        container.leadingAnchor --> contentView.leadingAnchor
+        container.trailingAnchor --> contentView.trailingAnchor
     }
 }
 

@@ -52,9 +52,11 @@ enum Const {
         // Not ideal but we can force unwrap but an app crashing just because someone accidentally deleted a color, will give use bad reviews
         // we can create a function that'll can get us the color or log when it happens that a color is missing in production and testing as well
         
-        static let backgroundColor = UIColor(named: "backgroundColor") ?? UIColor.black
-        static let appNameColor = UIColor(named: "appNameColor") ?? UIColor.red
+        static let background = UIColor(named: "backgroundColor") ?? UIColor.black
+        static let appName = UIColor(named: "appNameColor") ?? UIColor.red
         static let tabBarIconsTint = UIColor(named: "tabBarTintColor") ?? UIColor.white
+        // the variable name doesn't have the suffix color because at call site its obvious that we calling a color by Const.Color.infoBar
+        static let infoBar = UIColor(named: "infoBarColor") ?? UIColor.gray
 
         static let white = UIColor.white
         static let clear = UIColor.clear

@@ -89,7 +89,7 @@ extension MovieCatalogViewController {
         }
         flowLayout.sectionInset = UIEdgeInsets(top: Const.View.k16, left: Const.View.k16, bottom: Const.View.k16, right: Const.View.k16)
         collectionView.showsVerticalScrollIndicator = false
-        collectionView.backgroundColor = Const.Color.backgroundColor
+        collectionView.backgroundColor = Const.Color.background
         
         let leftRightInset = flowLayout.sectionInset.right + flowLayout.sectionInset.left + (2 * flowLayout.minimumInteritemSpacing)
         let itemWidth: CGFloat = (view.bounds.width - leftRightInset) / 3.0 // Didn't use UIScreen.main.bounds here because in split screens it gives us the split screens size not the window size
