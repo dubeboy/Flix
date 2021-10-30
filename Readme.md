@@ -36,10 +36,10 @@ Repository has entity, these represent a 1:1 mapping of the data coming back fro
 
 The app shares one UITabBarController and each tab has its own NavigationController. There is one Abstract Coordinator that Listens to when a view is being pushed or poped, therefore all the navigationControllers of our app set this abstract coordinatoer as the delegate.
 
-I've all added abit more comminting on the code itself to explain some of myu decisions
+I've all added abit more commenting on the code itself to explain some of my decisions
 
 P.S
-The `Infrastructure/Elements/Extensions` folder containes some extensions functions that i find handy and copied this from one of my side projects, (I should make them a library by now 😅)
+The `Infrastructure/Elements/Extensions` folder containes some extensions functions that I find handy and copied this from one of my side projects, (I should make them a library by now 😅)
 
 
 ### Logger
@@ -49,7 +49,7 @@ We have a logger that can easily be connected a analytics engine and it does'nt 
 
 we use operator overloading to help us write constraints easily, it looks like this:
 
-`v1 --> v2`
+`view1 --> view2 // This set the top, bottom, leading, trailing anchor of of view1 to equal view2` 
 
 this will automaticall activate the constraints, this does return the created constraint so that if you want deactivate it at some time in the future your can.
 
