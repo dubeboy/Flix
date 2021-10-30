@@ -22,6 +22,7 @@ class MovieCatalogRepositoryImpl: MovieCatalogRepository {
     
     func getUpComingMovies(at page: Int, result: @escaping NetworkResponseCompletion<MoviePageEntity>) {
         
+        // There is a small bug in the Marchant library we shouldn't be manually merging like this
         let params = FlixNetworkService.parameters.merging(["page": page]) { current, _ in
             current
         }

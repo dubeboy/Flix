@@ -14,10 +14,10 @@ protocol MovieCatalogViewModel {
    
     
     // We have two callbacks to the view
-    // The completion with the upcoming movies escaping because the callback is async
+    // The completion with the upcoming movies is escaping because the callback is async
     // The completion with error with a simple string that can be displayed on the screen
     //
-    // We used two completion because we want the view to be a dumb and as linear as possible(not many if statments)
+    // We used two completion because we want the view to be as dumb and as linear as possible(not many if statments)
     
     // we want this to be a void callback because the view has no intrest in response at tha current time
     func getUpComingMovies(completion: @escaping Completion<()>, error: @escaping Completion<String>)
@@ -56,8 +56,8 @@ class MovieCatalogViewModelImpl: MovieCatalogViewModel {
     // it will make it easy for us to introduce a dependecy
     // injection framework like swinject in the future and keeping things simple for now
     // This dependency injection will make it easy for us to inject a
-    // different implementation of MovieCatalogRepository when testing
-    // `repository` default parameter makes the call site (view) easy
+    // different implementation of MovieCatalogRepository when testing.
+    // The `repository` default parameter makes the call site (on Coordinator) easy
     init(_ repository: MovieCatalogRepository = MovieCatalogRepositoryImpl()) {
         self.repository = repository
     }

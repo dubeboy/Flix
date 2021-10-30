@@ -8,16 +8,14 @@
 import Foundation
 
 //
-// This is the most perfect form of MVVM. we can instead use the MovieEntity in our ViewModel
-// instead of
-// creating a new Model class so to enable us to go be little bit faster.
 
-// But creating a model allows us to transform the data that comes from the
+
+// Buy creating a model allows us to transform the data that comes from the
 // server to formats that are easy to display, like transformaing dates to readable strings and
 // we can convert our nullable entity types to non nullables
 //
 // We can also remove some fields that arent needed by this view and its viewModel or add some
-// state that is directly related to the to view, like scroll position
+// state that is directly related to the to view, like scroll position , isLoading etc
 //
 
 struct MovieModel {
@@ -39,9 +37,8 @@ struct MovieModel {
                    id: entity.id ?? -1,
                    originalTitle: entity.originalTitle ?? "",
                    title: entity.title ?? "",
-                   // A bit contravavasial , but DateFormatter is expensive, and we are creating it twice here ,
-                   // so its best that we do this operation once here, its also data transformation as well
-                   // everytime when we deque a cell
+                   // DateFormatter is expensive, and we are creating it twice here ,
+                   // so its best that we do this operation once here
                    realeaseDate: entity.releaseDate == nil ? "" : Date.fromString(string:  entity.releaseDate!).relativeDate(),
                    backdropPath: entity.backdropPath ?? "",
                    voteCount: entity.voteCount ?? 0,

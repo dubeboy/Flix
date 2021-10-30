@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Movie
 struct MoviePageEntity: Codable {
     // Make everything nullable to avoid possible returned null values
-    // crashing our app and that Codable doesn't try and decode a null
+    // crashing our app because Codable doesn't try and decode a null
     // to a non nullable Type
     //
     // Most of these will never be null as specified in the schema but
