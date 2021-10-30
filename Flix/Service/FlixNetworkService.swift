@@ -9,10 +9,12 @@ import Foundation
 import Merchant
 
 struct FlixNetworkService: Service {
-    var baseURL: String = ""
-    var query = ["api_key" : "1b5b100291ca41efa1d85ad150587d86", "langauge": "en-US"]
+    static let parameters = ["api_key" : "1b5b100291ca41efa1d85ad150587d86", "langauge": "en-US"]
     
-    @GET("https://api.themoviedb.org/3/movie/upcoming")
+    var baseURL: String = "https://api.themoviedb.org"
+    
+    
+    @GET("/3/movie/upcoming")
     var getUpcomingMovies: MoviePageEntity
 }
 

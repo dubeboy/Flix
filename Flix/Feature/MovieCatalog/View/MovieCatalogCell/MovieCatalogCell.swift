@@ -11,15 +11,19 @@ class MovieCatalogCell: UICollectionViewCell {
     
     let imageView = UIImageView()
     let popularityLabel = UILabel()
-//
+
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         self.clipsToBounds = true
-        translatesAutoresizingMaskIntoConstraints = false
-        contentView.translatesAutoresizingMaskIntoConstraints = false
+//        translatesAutoresizingMaskIntoConstraints = false
+//        contentView.translatesAutoresizingMaskIntoConstraints = false
         configureCell()
         configureBackgroundImage()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func prepareForReuse() {
@@ -41,15 +45,12 @@ extension MovieCatalogCell {
         layer.cornerRadius = Const.View.radius
         layer.masksToBounds = true
         isUserInteractionEnabled = true
-        contentView.makeRound()
-
-        addShadow()
     }
     
     private func configureBackgroundImage() {
         imageView.autoresizingOff()
         contentView.addSubview(imageView)
-        contentView --> contentView // Do Leading, trailing, top, bottom anchor at once
+        imageView --> contentView // Do Leading, trailing, top, bottom anchor at once
         imageView.contentMode = .scaleAspectFill
     }
     
@@ -60,7 +61,6 @@ extension MovieCatalogCell {
         container.addSubview(popularityLabel)
         popularityLabel.bottomAnchor --> contentView.bottomAnchor + -Const.View.k8
         popularityLabel.centerYAnchor --> contentView.centerYAnchor
-//        label.font =
     }
 }
 

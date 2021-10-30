@@ -10,8 +10,6 @@ import UIKit
 
 // MARK: TOASTS
 extension UIViewController {
-    // TODO: - should be bale to show image animation
-    // TODO: should be able to blur view controller below and should appear on top
     func presentToast(message: String) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         present(alert, animated: true, completion: nil)

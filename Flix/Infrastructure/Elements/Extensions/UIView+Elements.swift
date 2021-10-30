@@ -18,7 +18,7 @@ extension UIView {
         makeRound()
         contentMode = .scaleAspectFill
         layer.borderWidth = 0.03
-        layer.backgroundColor = Const.Color.backgroundColor?.cgColor
+        layer.backgroundColor = Const.Color.backgroundColor.cgColor
     }
 }
 
@@ -75,17 +75,6 @@ extension UIView {
                 break
         }
         
-    }
-}
-
-
-extension UIView {
-    func addShadow() {
-        self.layer.shadowColor = UIColor.gray.cgColor
-        self.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        self.layer.shadowRadius = 2.0
-        self.layer.shadowOpacity = 0.5
-        self.layer.masksToBounds = false
     }
 }
 

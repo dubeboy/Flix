@@ -22,6 +22,8 @@
 		71008EF8272B2CEE000F6B92 /* NSObject+Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008EF7272B2CEE000F6B92 /* NSObject+Elements.swift */; };
 		71008EFB272B2FB6000F6B92 /* MovieCatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008EFA272B2FB6000F6B92 /* MovieCatalogCell.swift */; };
 		71008F01272B3881000F6B92 /* UIView+Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008F00272B3880000F6B92 /* UIView+Elements.swift */; };
+		716CA77B272CC27A0024F691 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 716CA77A272CC27A0024F691 /* SDWebImage */; };
+		716CA77E272CE1E70024F691 /* Merchant in Frameworks */ = {isa = PBXBuildFile; productRef = 716CA77D272CE1E70024F691 /* Merchant */; };
 		7177CB5527296E1F00ADF765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5427296E1F00ADF765 /* AppDelegate.swift */; };
 		7177CB5727296E1F00ADF765 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5627296E1F00ADF765 /* SceneDelegate.swift */; };
 		7177CB5927296E1F00ADF765 /* MovieCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5827296E1F00ADF765 /* MovieCatalogViewController.swift */; };
@@ -34,9 +36,9 @@
 		7177CB912729EC8400ADF765 /* MovieCatalogRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB902729EC8400ADF765 /* MovieCatalogRepository.swift */; };
 		7177CB952729EFD500ADF765 /* MovieEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB942729EFD500ADF765 /* MovieEntity.swift */; };
 		7177CB982729F10500ADF765 /* NetworkResponseCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB972729F10500ADF765 /* NetworkResponseCompletion.swift */; };
-		7177CB9C2729F5B400ADF765 /* Merchant in Frameworks */ = {isa = PBXBuildFile; productRef = 7177CB9B2729F5B400ADF765 /* Merchant */; };
 		7177CBA32729F8A300ADF765 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CBA22729F8A300ADF765 /* Logger.swift */; };
 		7177CBA6272A01F400ADF765 /* FlixNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CBA5272A01F400ADF765 /* FlixNetworkService.swift */; };
+		7184185E272B6E8F00AC4F85 /* MovieCatalogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7184185D272B6E8F00AC4F85 /* MovieCatalogModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,7 @@
 		7177CB972729F10500ADF765 /* NetworkResponseCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponseCompletion.swift; sourceTree = "<group>"; };
 		7177CBA22729F8A300ADF765 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		7177CBA5272A01F400ADF765 /* FlixNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlixNetworkService.swift; sourceTree = "<group>"; };
+		7184185D272B6E8F00AC4F85 /* MovieCatalogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCatalogModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +102,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7177CB9C2729F5B400ADF765 /* Merchant in Frameworks */,
+				716CA77E272CE1E70024F691 /* Merchant in Frameworks */,
+				716CA77B272CC27A0024F691 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,9 +249,10 @@
 		7177CB8C2729E42E00ADF765 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				71008EF9272B2EE9000F6B92 /* MovieCatalogCell */,
+				7184185D272B6E8F00AC4F85 /* MovieCatalogModel.swift */,
 				71008ED3272AB7D0000F6B92 /* MovieCatalogViewModel.swift */,
 				7177CB5827296E1F00ADF765 /* MovieCatalogViewController.swift */,
+				71008EF9272B2EE9000F6B92 /* MovieCatalogCell */,
 				7177CB8D2729E43800ADF765 /* Widget */,
 			);
 			path = View;
@@ -368,7 +373,8 @@
 			);
 			name = Flix;
 			packageProductDependencies = (
-				7177CB9B2729F5B400ADF765 /* Merchant */,
+				716CA77A272CC27A0024F691 /* SDWebImage */,
+				716CA77D272CE1E70024F691 /* Merchant */,
 			);
 			productName = Flix;
 			productReference = 7177CB5127296E1F00ADF765 /* Flix.app */;
@@ -444,7 +450,8 @@
 			);
 			mainGroup = 7177CB4827296E1E00ADF765;
 			packageReferences = (
-				7177CB9A2729F5B400ADF765 /* XCRemoteSwiftPackageReference "Merchant" */,
+				716CA779272CC27A0024F691 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				716CA77C272CE1E70024F691 /* XCRemoteSwiftPackageReference "Merchant" */,
 			);
 			productRefGroup = 7177CB5227296E1F00ADF765 /* Products */;
 			projectDirPath = "";
@@ -511,6 +518,7 @@
 				7177CBA6272A01F400ADF765 /* FlixNetworkService.swift in Sources */,
 				71008EEC272B212D000F6B92 /* NSLocalizedString+Elements.swift in Sources */,
 				71008EDF272B0ECC000F6B92 /* Theme.swift in Sources */,
+				7184185E272B6E8F00AC4F85 /* MovieCatalogModel.swift in Sources */,
 				71008EF6272B2C1D000F6B92 /* UIViewController+Elements.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -877,7 +885,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7177CB9A2729F5B400ADF765 /* XCRemoteSwiftPackageReference "Merchant" */ = {
+		716CA779272CC27A0024F691 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		716CA77C272CE1E70024F691 /* XCRemoteSwiftPackageReference "Merchant" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dubeboy/Merchant";
 			requirement = {
@@ -888,9 +904,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7177CB9B2729F5B400ADF765 /* Merchant */ = {
+		716CA77A272CC27A0024F691 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7177CB9A2729F5B400ADF765 /* XCRemoteSwiftPackageReference "Merchant" */;
+			package = 716CA779272CC27A0024F691 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		716CA77D272CE1E70024F691 /* Merchant */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 716CA77C272CE1E70024F691 /* XCRemoteSwiftPackageReference "Merchant" */;
 			productName = Merchant;
 		};
 /* End XCSwiftPackageProductDependency section */

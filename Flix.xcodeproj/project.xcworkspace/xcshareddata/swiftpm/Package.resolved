@@ -15,7 +15,7 @@
         "repositoryURL": "https://github.com/dubeboy/Merchant",
         "state": {
           "branch": "develop",
-          "revision": "82fe1d8e1221eb3221f327cfea8df4a4bc9e37e4",
+          "revision": "b31d214b8c0446a8d230cf14aa7b3e72ae270e8f",
           "version": null
         }
       },
@@ -26,6 +26,15 @@
           "branch": null,
           "revision": "352066f1a29108548386487ae083b4115e94c1fb",
           "version": "2.5.4"
+        }
+      },
+      {
+        "package": "SDWebImage",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImage",
+        "state": {
+          "branch": null,
+          "revision": "a72df4849408da7e5d3c1b586797b7c601c41d1b",
+          "version": "5.12.1"
         }
       }
     ]

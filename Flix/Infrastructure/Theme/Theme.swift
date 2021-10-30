@@ -26,7 +26,10 @@ enum Const {
     
     // MARK: - App assets
     enum Assets {
+        //Shared assets
+        static let placeHolderImage: UIImage? = getSystemAsset(systemName: "moviePlaceHolder")
         
+        // Assets Unique to this VC
         enum MovieCatalog {
             static let icon: UIImage? = getSystemAsset(systemName: "film")
         }
@@ -34,7 +37,7 @@ enum Const {
         private static func getSystemAsset(systemName: String) -> UIImage? {
             let image = UIImage(named: systemName)
             if image == nil {
-                Logger.log("\(#function): image is nil")
+                Logger.log("\(#function): image is nil") // We are logging here because this should never happen in the case that it happens we can investigate it
             }
             return image
         }
@@ -43,10 +46,15 @@ enum Const {
         
     enum Color {
     
-        static let backgroundColor = UIColor(named: "backgroundColor")
-        static let appNameColor = UIColor(named: "appNameColor")
+        // The UIColor should never be null but in some random chance that it happens we just return a color close to that color
+        // Not ideal but we can force unwrap but an app crashing just because someone accidentally deleted a color, will give use bad reviews
+        // we can create a function that'll can get us the color or log when it happens that a color is missing in production and testing as well
+        
+        static let backgroundColor = UIColor(named: "backgroundColor") ?? UIColor.black
+        static let appNameColor = UIColor(named: "appNameColor") ?? UIColor.red
 
         static let white = UIColor.white
+        static let clear = UIColor.clear
     }
     
 

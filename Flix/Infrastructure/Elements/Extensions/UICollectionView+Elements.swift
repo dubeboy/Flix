@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UICollectionView {
-    // could also add some registration that uses properwrappers
+    
     func deque<T: UICollectionViewCell>(_ `class`: T.Type, at indexPath: IndexPath) -> T {
         dequeueReusableCell(withReuseIdentifier: T.reuseIdentifier, for: indexPath) as! T
     }

@@ -8,6 +8,7 @@
 import Foundation
 
 // we can log these errors to our analytics engine our own analytics engine maybe?
+// we also dont log to console in prod
 enum Logger {
     static func log(_ error: Error) {
         #if DEBUG
