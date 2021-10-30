@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ActivityIndicatorCell: UICollectionViewCell {
+class ActivityIndicatorFooterCell: UICollectionReusableView {
 
-    var spinner = UIActivityIndicatorView(style: .gray)
+    let spinner = UIActivityIndicatorView(style: .white)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,11 +21,12 @@ class ActivityIndicatorCell: UICollectionViewCell {
     }
 }
 
-extension ActivityIndicatorCell {
+extension ActivityIndicatorFooterCell {
     private func configureSelf() {
-        contentView.addSubview(spinner)
-        contentView.backgroundColor = Const.Color.clear
-        spinner.centerYAnchor --> contentView.centerYAnchor
-        spinner.centerXAnchor --> contentView.centerXAnchor
+        spinner.autoresizingOff()
+        addSubview(spinner)
+        backgroundColor = Const.Color.clear
+        spinner.centerYAnchor --> centerYAnchor
+        spinner.centerXAnchor --> centerXAnchor
     }
 }

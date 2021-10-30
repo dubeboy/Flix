@@ -62,6 +62,9 @@ struct MovieCatalogModel {
     var totalPage: Int = 0
     var movies: [MovieModel] = []
     
+    // View State variables
+    var isLoading = true
+    
     static func transform(_ entity: MoviePageEntity) -> Self {
         MovieCatalogModel(page: entity.page ?? -1,
                             totalPage: entity.totalPages ?? 0,

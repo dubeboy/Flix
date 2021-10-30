@@ -47,7 +47,7 @@ class MovieCatalogViewController: UICollectionViewController {
 
 // MARK: - Datasources & Delegate
 
-extension MovieCatalogViewController {
+extension MovieCatalogViewController: UICollectionViewDelegateFlowLayout {
     
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
@@ -61,27 +61,50 @@ extension MovieCatalogViewController {
         return cell
     }
     
-//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let movie = viewModel.getMovie(at: indexPath)
-//
-//    }
-    
-    private func configure(cell: MovieCatalogCell, at indexPath: IndexPath) {
-        guard let url = viewModel.getBackDropUrl(at: indexPath) else {
-            return
-        }
-        let movie = viewModel.getMovie(at: indexPath)
-        cell.imageView.sd_setImage(with: url, placeholderImage: Const.Assets.placeHolderImage)
-        cell.title.text = movie.title
-        cell.comingDate.text = movie.realeaseDate
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        viewModel.isLoading ? .zero : CGSize(width: collectionView.bounds.size.width, height: 55)
     }
     
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionFooter {
+            let footer = collectionView.dequeSupplementaryView(ActivityIndicatorFooterCell.self, at: indexPath, ofKind: kind)
+            return footer
+        }
+        return UICollectionReusableView()
+    }
     
+    override func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
+        if elementKind == UICollectionView.elementKindSectionFooter {
+            Logger.i("add footer")
+
+            let footer = view as? ActivityIndicatorFooterCell
+            footer?.spinner.startAnimating()
+            
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, at indexPath: IndexPath) {
+        if elementKind == UICollectionView.elementKindSectionFooter {
+            Logger.i("Remove footer")
+            let footer = view as? ActivityIndicatorFooterCell
+            footer?.spinner.stopAnimating()
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == viewModel.moviesCount - 10 && !viewModel.isLoading {
+            viewModel.loadMore { [weak self] in
+                self?.collectionView.reloadData()
+            } error: { errorString in
+                self.presentToast(message: errorString)
+            }
+        }
+    }
 }
 
 
 // MARK: - Private functions
-
+//private
 extension MovieCatalogViewController {
     // Its okay for some UIKit logic or setup to stay here because its view related, the last thing we want is to be passing our UIKit views to the viewModel
     private func setupCollectionView() {
@@ -101,6 +124,7 @@ extension MovieCatalogViewController {
         flowLayout.itemSize = itemSize
         
         collectionView.registerClass(MovieCatalogCell.self)
+        collectionView.registerFooterClass(ActivityIndicatorFooterCell.self)
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -142,6 +166,16 @@ extension MovieCatalogViewController {
         tabBarController?.tabBar.barTintColor = .black
 //        tabBarController?.tabBar.isHidden = true
         configureNavigationTitleView()
+    }
+    
+    private func configure(cell: MovieCatalogCell, at indexPath: IndexPath) {
+        guard let url = viewModel.getBackDropUrl(at: indexPath) else {
+            return
+        }
+        let movie = viewModel.getMovie(at: indexPath)
+        cell.imageView.sd_setImage(with: url, placeholderImage: Const.Assets.placeHolderImage)
+        cell.title.text = movie.title
+        cell.comingDate.text = movie.realeaseDate
     }
 
 }

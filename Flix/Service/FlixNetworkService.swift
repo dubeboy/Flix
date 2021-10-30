@@ -9,7 +9,7 @@ import Foundation
 import Merchant
 
 struct FlixNetworkService: Service {
-    static let parameters = ["api_key" : "1b5b100291ca41efa1d85ad150587d86", "langauge": "en-US"]
+    static let parameters: [String: StringRepresentable] = ["api_key" : "1b5b100291ca41efa1d85ad150587d86", "langauge": "en-US"]
     
     var baseURL: String = "https://api.themoviedb.org"
     

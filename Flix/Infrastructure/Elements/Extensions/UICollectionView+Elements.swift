@@ -15,10 +15,10 @@ extension UICollectionView {
         dequeueReusableCell(withReuseIdentifier: T.reuseIdentifier, for: indexPath) as! T
     }
     
-    func dequeHeader<T: UICollectionViewCell>(_ `class`: T.Type, at indexPath: IndexPath) -> T {
+    func dequeSupplementaryView<T: UICollectionReusableView>(_ `class`: T.Type, at indexPath: IndexPath, ofKind kind: String) -> T {
         dequeueReusableSupplementaryView(
-            ofKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: T.reuseIdentifier, for: indexPath
+            ofKind: kind,
+            withReuseIdentifier: T.stringName, for: indexPath
         ) as! T
     }
     
@@ -29,14 +29,13 @@ extension UICollectionView {
         )
     }
     
-    func registerHeader<T: UICollectionViewCell>(_ fromNib: T.Type) {
+    func registerFooterClass<T: UICollectionReusableView>(_ `class`: T.Type) {
         register(
-            UINib(nibName: T.reuseIdentifier, bundle: Bundle.main),
-            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: T.reuseIdentifier
+            `class`,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+            withReuseIdentifier: T.stringName
         )
     }
-    
     
 }
 

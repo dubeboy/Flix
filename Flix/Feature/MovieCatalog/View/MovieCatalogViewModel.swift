@@ -10,6 +10,7 @@ import Foundation
 protocol MovieCatalogViewModel {
     var title: String { get }
     var moviesCount: Int { get }
+    var isLoading: Bool { get set  }
    
     
     // We have two callbacks to the view
@@ -22,11 +23,22 @@ protocol MovieCatalogViewModel {
     func getUpComingMovies(completion: @escaping Completion<()>, error: @escaping Completion<String>)
     func getMovie(at indexPath: IndexPath) -> MovieModel // Named parameter
     func getBackDropUrl(at indexPath: IndexPath) -> URL?
+    func loadMore(completion: @escaping Completion<()>, error: @escaping Completion<String>)
 }
 
 class MovieCatalogViewModelImpl: MovieCatalogViewModel {
   
+
     private var model: MovieCatalogModel = MovieCatalogModel()
+    
+    var isLoading: Bool {
+        get {
+            model.isLoading
+        }
+        set {
+            model.isLoading = newValue
+        }
+    }
 
     
     var moviesCount: Int {
@@ -54,10 +66,11 @@ class MovieCatalogViewModelImpl: MovieCatalogViewModel {
     func getUpComingMovies(completion: @escaping Completion<()>, error: @escaping Completion<String>) {
         // We dont have to switch back to the main thread here the the Merchant + Alamofire
         // handles switching back to the thread from which it was called from
-        repository.getUpComingMovies { [weak self] response in
+        repository.getUpComingMovies(at: 1) { [weak self] response in
             switch response {
                 case .success(let moviePageEntity):
                     self?.model = MovieCatalogModel.transform(moviePageEntity)
+                    self?.model.isLoading = false
                     completion(())
                 case .failure(let e):
                     error(e.localizedDescription)
@@ -75,9 +88,27 @@ class MovieCatalogViewModelImpl: MovieCatalogViewModel {
         components.scheme = "https"
         components.host = "image.tmdb.org"
         components.path = "/t/p/w300\(movie.posterPath)"
-        Logger.i(components.url?.absoluteString ?? "FAIL URL")
         return components.url
         
+    }
+    
+    func loadMore(completion: @escaping Completion<()>, error: @escaping Completion<String>) {
+        if model.page <= model.totalPage, !model.isLoading {
+            model.page += 1
+            model.isLoading = true
+            repository.getUpComingMovies(at: model.page) { [weak self] response in
+                guard let self = self else { return }
+
+                switch response {
+                    case .success(let moviePageEntity):
+                        self.model.movies.append(contentsOf: moviePageEntity.results?.map(MovieModel.transform(_:)) ?? [])
+                        self.model.isLoading = false
+                        completion(())
+                    case .failure(let e):
+                        error(e.localizedDescription)
+                }
+            }
+        }
     }
 
 }
