@@ -27,6 +27,7 @@ struct MovieModel {
     var id: Int
     var originalTitle: String
     var title: String
+    var realeaseDate: String
     var backdropPath: String
     var voteCount: Int
     var video: Bool
@@ -38,6 +39,10 @@ struct MovieModel {
                    id: entity.id ?? -1,
                    originalTitle: entity.originalTitle ?? "",
                    title: entity.title ?? "",
+                   // A bit contravavasial , but DateFormatter is expensive, and we are creating it twice here ,
+                   // so its best that we do this operation once here, its also data transformation as well
+                   // everytime when we deque a cell
+                   realeaseDate: entity.releaseDate == nil ? "" : Date.fromString(string:  entity.releaseDate!).relativeDate(),
                    backdropPath: entity.backdropPath ?? "",
                    voteCount: entity.voteCount ?? 0,
                    video: entity.video ?? false,

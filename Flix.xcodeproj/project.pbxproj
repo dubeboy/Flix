@@ -24,6 +24,8 @@
 		71008F01272B3881000F6B92 /* UIView+Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71008F00272B3880000F6B92 /* UIView+Elements.swift */; };
 		716CA77B272CC27A0024F691 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 716CA77A272CC27A0024F691 /* SDWebImage */; };
 		716CA77E272CE1E70024F691 /* Merchant in Frameworks */ = {isa = PBXBuildFile; productRef = 716CA77D272CE1E70024F691 /* Merchant */; };
+		716CA780272D1F390024F691 /* Date+Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716CA77F272D1F390024F691 /* Date+Element.swift */; };
+		716CA782272D28BB0024F691 /* ActivityIndicatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716CA781272D28BB0024F691 /* ActivityIndicatorCell.swift */; };
 		7177CB5527296E1F00ADF765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5427296E1F00ADF765 /* AppDelegate.swift */; };
 		7177CB5727296E1F00ADF765 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5627296E1F00ADF765 /* SceneDelegate.swift */; };
 		7177CB5927296E1F00ADF765 /* MovieCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177CB5827296E1F00ADF765 /* MovieCatalogViewController.swift */; };
@@ -76,6 +78,8 @@
 		71008EF7272B2CEE000F6B92 /* NSObject+Elements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Elements.swift"; sourceTree = "<group>"; };
 		71008EFA272B2FB6000F6B92 /* MovieCatalogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCatalogCell.swift; sourceTree = "<group>"; };
 		71008F00272B3880000F6B92 /* UIView+Elements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Elements.swift"; sourceTree = "<group>"; };
+		716CA77F272D1F390024F691 /* Date+Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Element.swift"; sourceTree = "<group>"; };
+		716CA781272D28BB0024F691 /* ActivityIndicatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorCell.swift; sourceTree = "<group>"; };
 		7177CB5127296E1F00ADF765 /* Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7177CB5427296E1F00ADF765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7177CB5627296E1F00ADF765 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,12 +159,13 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
-		71008EF9272B2EE9000F6B92 /* MovieCatalogCell */ = {
+		71008EF9272B2EE9000F6B92 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				71008EFA272B2FB6000F6B92 /* MovieCatalogCell.swift */,
+				716CA781272D28BB0024F691 /* ActivityIndicatorCell.swift */,
 			);
-			path = MovieCatalogCell;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		7177CB4827296E1E00ADF765 = {
@@ -252,7 +257,7 @@
 				7184185D272B6E8F00AC4F85 /* MovieCatalogModel.swift */,
 				71008ED3272AB7D0000F6B92 /* MovieCatalogViewModel.swift */,
 				7177CB5827296E1F00ADF765 /* MovieCatalogViewController.swift */,
-				71008EF9272B2EE9000F6B92 /* MovieCatalogCell */,
+				71008EF9272B2EE9000F6B92 /* Cells */,
 				7177CB8D2729E43800ADF765 /* Widget */,
 			);
 			path = View;
@@ -336,6 +341,7 @@
 		7177CBA12729F85100ADF765 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				716CA77F272D1F390024F691 /* Date+Element.swift */,
 				71008F00272B3880000F6B92 /* UIView+Elements.swift */,
 				71008EF7272B2CEE000F6B92 /* NSObject+Elements.swift */,
 				71008EF5272B2C1D000F6B92 /* UIViewController+Elements.swift */,
@@ -518,6 +524,8 @@
 				7177CBA6272A01F400ADF765 /* FlixNetworkService.swift in Sources */,
 				71008EEC272B212D000F6B92 /* NSLocalizedString+Elements.swift in Sources */,
 				71008EDF272B0ECC000F6B92 /* Theme.swift in Sources */,
+				716CA782272D28BB0024F691 /* ActivityIndicatorCell.swift in Sources */,
+				716CA780272D1F390024F691 /* Date+Element.swift in Sources */,
 				7184185E272B6E8F00AC4F85 /* MovieCatalogModel.swift in Sources */,
 				71008EF6272B2C1D000F6B92 /* UIViewController+Elements.swift in Sources */,
 			);

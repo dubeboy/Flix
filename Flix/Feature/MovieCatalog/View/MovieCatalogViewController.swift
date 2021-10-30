@@ -34,7 +34,6 @@ class MovieCatalogViewController: UICollectionViewController {
     override func viewDidAppear(_ animated: Bool) {
         navigationController?.navigationBar.barStyle = .black
         navigationController?.navigationBar.isTranslucent = false
-        UITabBar.appearance().barTintColor = UIColor.black
     }
 
     override func viewDidLoad() {
@@ -71,9 +70,13 @@ extension MovieCatalogViewController {
         guard let url = viewModel.getBackDropUrl(at: indexPath) else {
             return
         }
+        let movie = viewModel.getMovie(at: indexPath)
         cell.imageView.sd_setImage(with: url, placeholderImage: Const.Assets.placeHolderImage)
-
+        cell.title.text = movie.title
+        cell.comingDate.text = movie.realeaseDate
     }
+    
+    
 }
 
 
@@ -94,8 +97,9 @@ extension MovieCatalogViewController {
         let leftRightInset = flowLayout.sectionInset.right + flowLayout.sectionInset.left + (2 * flowLayout.minimumInteritemSpacing)
         let itemWidth: CGFloat = (view.bounds.width - leftRightInset) / 3.0 // Didn't use UIScreen.main.bounds here because in split screens it gives us the split screens size not the window size
         
-        let itemSize = CGSize(width: itemWidth, height: 210)
+        let itemSize = CGSize(width: itemWidth, height: 220)
         flowLayout.itemSize = itemSize
+        
         collectionView.registerClass(MovieCatalogCell.self)
         collectionView.dataSource = self
         collectionView.delegate = self

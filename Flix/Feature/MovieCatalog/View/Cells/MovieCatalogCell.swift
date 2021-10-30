@@ -63,23 +63,26 @@ extension MovieCatalogCell {
         let container = UIView()
         container.backgroundColor = Const.Color.infoBar
         container.autoresizingOff()
-        container.heightAnchor --> 30
+        container.heightAnchor --> 55
         title.autoresizingOff()
         container.addSubview(title)
-        title.topAnchor --> container.topAnchor + Const.View.k8
+        title.topAnchor --> container.topAnchor + Const.View.k4
         title.leadingAnchor --> container.leadingAnchor + Const.View.k8
         title.trailingAnchor --> container.trailingAnchor + -Const.View.k8
         title.numberOfLines = 2
-        title.lineBreakMode = .byWordWrapping
-        title.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        title.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        title.textColor = Const.Color.tabBarIconsTint
         
         comingDate.autoresizingOff()
         container.addSubview(comingDate)
         comingDate.numberOfLines = 1
-        comingDate.topAnchor --> title.bottomAnchor + Const.View.k8
+        comingDate.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        comingDate.textColor = Const.Color.tabBarIconsTint
+        comingDate.topAnchor --> title.bottomAnchor + Const.View.k4
         comingDate.leadingAnchor --> container.leadingAnchor + Const.View.k8
-        comingDate.bottomAnchor --> container.bottomAnchor + -Const.View.k8
+//        comingDate.bottomAnchor --> container.bottomAnchor + -Const.View.k4
         comingDate.trailingAnchor --> container.trailingAnchor + -Const.View.k8
+        
         
         contentView.addSubview(container)
         container.topAnchor --> imageView.bottomAnchor // Completing the imageview's contraints , order doesn't matter as long as H, W, X, Y can be determined
