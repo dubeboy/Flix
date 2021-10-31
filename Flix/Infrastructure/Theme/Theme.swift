@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-
+// This is an enum because enums cannot be instantiated 
 enum Const {
 
     
