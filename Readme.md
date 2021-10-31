@@ -54,3 +54,11 @@ we use operator overloading to help us write constraints easily, it looks like t
 this will automatically activate the constraints, this does return the created constraint so that if you want to deactivate it at some time in the future you can.
 
 there are many more overloaded operators to help with dealing with constraints in code, checkout `Infrastructure/Elements/Extensions/NSLayoutConstraints+Elements.swift`
+
+### Localization
+
+All our strings are accessed from one central file `Localizable.strings` (en), and that file can be localized to many diffrent languages and those changes will automatically reflect throughout the app. 
+
+Also created an extension on String that allows us to easily access localized strings like this:
+
+`"ok".localised`
